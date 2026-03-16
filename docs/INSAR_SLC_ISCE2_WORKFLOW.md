@@ -1,21 +1,14 @@
 # Full InSAR displacement: SLC download + ISCE2
 
-This is the path to **real displacement in mm** (line-of-sight) when the ground shifts. Use it when you want “time displacement” in the InSAR sense.
+This corresponds to the `insar_displacement` scan type in `config/scan.json` (disabled by default).
 
 ## Steps
 
 ### 1. Find SLC products
 
-- **Catalogue:** `https://catalogue.dataspace.copernicus.eu/odata/v1/Products`
-- **Filter:** Collection `SENTINEL-1`, productType `IW_SLC__1S`, footprint intersects your bbox (WKT polygon), `ContentDate` in range, `Online eq true`.
-- **Output:** Product `Name` (e.g. `S1A_IW_SLC__1SDV_20230101T...SAFE`) and download URL from `Assets`.
-- Pick **two dates** (e.g. 12 days apart for good coherence, or longer for displacement).
-
-Example (replace bbox and dates):
+Query the CDSE Catalogue for SLC products covering the tile bbox:
 
 ```bash
-# Get token first (same as Process API or ODP)
-# Then (one line, split for readability):
 curl -H "Authorization: Bearer $TOKEN" \
   'https://catalogue.dataspace.copernicus.eu/odata/v1/Products?$filter=
     Collection/Name%20eq%20%27SENTINEL-1%27%20and
@@ -25,28 +18,26 @@ curl -H "Authorization: Bearer $TOKEN" \
     Online%20eq%20true&$top=5'
 ```
 
-### 2. Download SLC to $SCRATCH
+Pick two dates (e.g. 12 days apart for good coherence, or longer for displacement).
 
-- Use the product download API (see CDSE OData product download docs) with your token. Download the SAFE zip to e.g. `$SCRATCH/insar/<site_id>/`.
-- You need **two** SLCs (reference + secondary).
+### 2. Download SLC to scratch
 
-### 3. Run ISCE2 on the cluster
+Download SAFE zips via CDSE OData product download API with your token. Store in scratch (not committed).
 
-- **Module:** `module load isce2/2.6.3` (CVMFS).
-- **Workflow:** Sentinel-1 TOPS InSAR. ISCE2 has a **topsStack** (or similar) workflow: reference SLC + secondary SLC → coregister → interferogram → (optional) unwrap → geocode → displacement/coherence.
-- **Paths:** If the cluster’s isce2 does not expose the stack by default, set:
-  - `ISCE_STACK` to the path of `contrib/stack` inside the ISCE2 install,
-  - and add `topsStack` to `PATH` (see ISCE2 docs / GitHub).
-- **Output:** Geocoded interferogram, coherence, and (if unwrapped) displacement in mm. Use the displacement raster as an extra “chance” or “displacement_mm” layer in the pipeline.
+### 3. Run ISCE2
 
-### 4. Use displacement in the pipeline
+```bash
+module load isce2/2.6.3
+# Reference SLC + secondary SLC -> coregister -> interferogram -> unwrap -> geocode
+# Output: displacement (mm LOS), coherence
+```
 
-- Geocode to the same grid as your variance stack (e.g. with GDAL), then:
-  - **Option A:** Displacement magnitude (or gradient) as a second score — combine with variance-based chance (e.g. `chance = 0.6 * var_chance + 0.4 * disp_chance`).
-  - **Option B:** Export displacement and coherence as extra rasters in `results/<site_id>/` (e.g. `displacement_los.tif`, `coherence.tif`) so archaeologists can overlay “where the ground moved.”
+ISCE2 topsStack workflow handles Sentinel-1 TOPS coregistration automatically.
 
-## References
+### 4. Use in pipeline
 
-- CDSE OData: product search and download.
-- ISCE2: [https://github.com/isce-framework/isce2](https://github.com/isce-framework/isce2), `contrib/stack/topsStack`, README.
-- Your cluster: `SENTINEL_FLATTEN_COREGISTER.md` (isce2/2.6.3 for InSAR).
+Geocode output to the same grid as stack.tif (GDAL). The `insar_displacement` scan type reads the displacement raster, thresholds persistent displacement, and writes candidates to `results/<tile_id>/insar_displacement/`.
+
+## When to use
+
+Enable only for tiles with high-confidence candidates from the 12 default scan types. Full SLC processing is ~30 min/tile and requires large downloads. Use the GRD-based pipeline as the screener first.

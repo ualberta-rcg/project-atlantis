@@ -1,8 +1,11 @@
-# Archaeology detection results
+# Results
 
-- **Per tile, per pathway:** `results/<tile_id>/<pathway>/` contains:
-  - `stack.tif`, `anomaly.tif`, `candidates.csv`, `candidates.geojson`, `metadata.json`, `process_record.json` (and optional `process_record.md`).
-  - Optional: `coherence.tif`, `displacement_los.tif` when that pathway includes InSAR.
-- **All high-chance spots:** `results/all_candidates.geojson` — aggregates all pathways; each feature has `tile_id` and `pathway`. Open in QGIS or [geojson.io](https://geojson.io).
+Per-tile results from the v3 pipeline. Each tile gets:
 
-Full layout and file contents: see plan **sections 5 and 5b**.
+- `results/<tile_id>/stack.tif` -- shared base layer (mean/var/std/median VV+VH)
+- `results/<tile_id>/<scan_type>/` -- anomaly.tif, candidates.geojson, candidates.csv, metadata.json
+- `results/<tile_id>/process_record.json` -- inputs, scan types run, candidate counts
+
+Aggregate: `results/all_candidates.geojson` -- rebuilt by `python scripts/rebuild_aggregate.py`.
+
+Open candidates in QGIS or [geojson.io](https://geojson.io). See `docs/RESULTS_LAYOUT.md` for full layout.

@@ -1,45 +1,34 @@
-# Time displacement (InSAR) for structures under sand or canopy
+# InSAR and displacement (v3)
 
-## Why we want it
+Both InSAR scan types are **disabled by default** in `config/scan.json`. Enable them for high-priority tiles that already have strong candidates from other scan types.
 
-- **Structures under sand or under canopy** can stay invisible in a single image.
-- **When the ground shifts over time** (subsidence, seasonal movement, differential settling over buried walls), InSAR measures that **displacement** (mm-scale).
-- So **time displacement** lets us see objects when the earth moves: buried features or structures under vegetation can show up as differential motion or loss of coherence between two dates.
+## coherence_coh12 (Path A)
 
-We combine two signals:
-1. **Backscatter variance** (already in the pipeline) — same spot, different dates; intensity change.
-2. **Time displacement / coherence** — phase change (InSAR) or coherence (stability of the phase). Low coherence or nonzero displacement can indicate “something changed here” (e.g. structure under sand or canopy).
+- **What:** Downloads pre-computed CARD-COH12 (12-day coherence) from CDSE On-Demand Processing.
+- **Measures:** How stable the radar phase is between two dates (0-1). Low coherence = surface changed.
+- **Use in pipeline:** Combine with variance: high variance + high coherence = likely subsurface feature (stable surface but anomalous backscatter). High variance + low coherence = surface noise (wind, sand movement) -- likely false positive.
+- **API:** Submits order via CDSE ODP, polls until done, downloads result. See `scripts/order_coh12.py`.
+- **Enable:** Set `"enabled": true` for `coherence_coh12` in scan.json.
 
-## Two ways to get it
+## insar_displacement (Path B)
 
-### Path A: Coherence (CARD-COH12) — on-demand, no SLC download
+- **What:** Full InSAR displacement from SLC (Single Look Complex) data via ISCE2.
+- **Measures:** Actual line-of-sight surface displacement at mm scale.
+- **Detects:** Subsidence over underground voids (tombs, tunnels, collapsed chambers). Differential compaction between buried structures and surrounding fill.
+- **Steps:**
+  1. Download SLC products from CDSE Catalogue (large files, to scratch disk)
+  2. Run ISCE2 topsStack: coregistration, interferogram, phase unwrapping, geocoding
+  3. Output: displacement raster + coherence, geocoded to same grid as stack.tif
+- **Requirements:** ISCE2 installed (e.g. `module load isce2/2.6.3` on cluster), significant CPU time (~30 min/tile).
+- **Enable:** Set `"enabled": true` for `insar_displacement` in scan.json.
 
-- **What:** CDSE **On-Demand Processing** workflow **CARD-COH12**: coherence of a **pair of Sentinel-1 SLC images 12 days apart**. Coherence = how stable the phase is (0–1). **Low coherence** = surface changed (displacement, moisture, vegetation, or scattering change).
-- **Pros:** No need to download SLC; you submit an order with one SLC product ID, the service produces a coherence product; you download the result.
-- **Cons:** Not true displacement in mm; it’s a proxy for “change between two dates.” Quotas: limited concurrent orders (see CDSE quotas).
-- **Use:** Order coherence for a site → get a GeoTIFF (or similar) → use **(1 − coherence)** or low-coherence areas as an extra “chance” layer (e.g. “change here”) and combine with variance-based chance.
+## SLC data
 
-### Path B: Full InSAR displacement (SLC + ISCE2)
+- Source: CDSE Catalogue OData API (same token as Process API)
+- Filter: `SENTINEL-1`, productType `IW_SLC__1S`, footprint intersects tile bbox
+- Resolution: ~2.3 m range x ~14 m azimuth (finer than GRD)
+- Coverage: worldwide from Feb 2021; Europe from Oct 2014
 
-- **What:** Download **two (or more) Sentinel-1 SLC** products for the same area and two dates → run **ISCE2** on the cluster (coregister, interferogram, unwrap, geocode) → get **displacement in mm** (line-of-sight) and/or coherence.
-- **Pros:** Real displacement (mm/year or mm between dates); best for “earth shifted here.”
-- **Cons:** Need to discover and download SLC (large files) to `$SCRATCH`; run ISCE2 (topsStack or similar); more setup.
-- **Use:** Displacement magnitude or gradient as “chance” layer; combine with variance and optionally coherence.
+## Two-tier strategy
 
-## Data and tools
-
-- **SLC:** Sentinel-1 IW SLC. Available from CDSE (catalogue OData + download). Rest of World: from Feb 2021; Europe: from Oct 2014.
-- **Cluster:** `isce2/2.6.3` on CVMFS for InSAR (Path B). Path A uses CDSE ODP API only.
-- **Auth:** Path A uses CDSE (ODP token; may need username/password for On-Demand). Path B uses catalogue + download (same CDSE token as for catalogue).
-
-## Summary
-
-| Goal                         | Path A (coherence)     | Path B (full InSAR)   |
-|-----------------------------|------------------------|------------------------|
-| “Change between two dates”  | Yes (low coherence)    | Yes (phase + coherence) |
-| Displacement in mm          | No                     | Yes                    |
-| Use “earth shifts” for find | As proxy (change)      | Direct (displacement)  |
-| SLC download                | No                     | Yes                    |
-| Cluster (ISCE2)             | No                     | Yes                    |
-
-We add **Path A** first (order CARD-COH12, ingest coherence into the pipeline), then **Path B** (SLC + ISCE2) for full displacement when you need mm-level motion.
+Use the 12 enabled GRD-based scan types as the wide-area screener. When candidates are identified with high confidence (combined_top5), enable InSAR for just those tiles. This avoids the heavy SLC processing for the vast majority of tiles that have no candidates.

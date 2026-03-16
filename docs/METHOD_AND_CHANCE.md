@@ -1,25 +1,33 @@
 # How we find candidates and what "chance" means
 
-## Did we use time displacement?
+## What we do (v3)
 
-**Variance pipeline:** We did **not** use InSAR or displacement in the default run. We use **temporal variance** of backscatter only.
+We run **all enabled scan types** from `config/scan.json` on each tile. Each scan type detects different kinds of anomalies:
 
-**Adding time displacement:** We support two ways to add it (see **docs/INSAR_AND_DISPLACEMENT.md**): (1) **Coherence** (CARD-COH12 on-demand) as a “change between two dates” proxy; (2) **Full InSAR** (SLC download + ISCE2) for displacement in mm when the ground shifts. Both can be combined with the variance-based “chance” so that structures under sand or canopy show up as the earth moves.
+- **Temporal** (variance_95/99, cv, mad, seasonal_difference, multitemporal_change) -- how pixel brightness varies over 8-15 images across time.
+- **Polarimetric** (crosspol_ratio, crosspol_ratio_variance) -- how the VH/VV scattering ratio differs from surroundings or fluctuates.
+- **Spatial** (texture_glcm, edge_detection, spatial_autocorrelation) -- patterns in the mean backscatter image (texture, edges, clustering).
+- **Baseline** (backscatter_intensity) -- reference map, no candidates.
+- **Composite** (combined_top5) -- weighted combination of top 5 scan types; candidates must appear in at least 2 methods.
 
-- **What we do:** **Temporal variance of backscatter.** We take 2–5 Sentinel-1 images (same area, different dates), compute the **variance** of VV and VH over time at each pixel. Pixels that change a lot over time (high variance) are flagged as candidates. That can reveal subsurface contrast (e.g. buried structure affecting moisture or roughness) or stable features that stand out from the background.
-- **Time displacement (InSAR)** would mean: phase difference between two SLC (Single Look Complex) acquisitions → ground movement in mm/year. That’s a different product (needs SLC data and ISCE2 or similar). We could add it later for “ground moving” sites, but the current pipeline does **not** use it.
-
-So we find candidates from **backscatter change over time** (variance), not from displacement.
+The composite score (`combined_top5`) gives highest confidence: a candidate flagged by variance, texture, AND edge detection is almost certainly real. A candidate flagged by only one method could be noise.
 
 ## What is "chance"?
 
-- **chance** is a number from **0 to 1** (you can show it as 0–100%) for each candidate point.
-- It means: **how much more anomalous this pixel is than the cutoff.**  
-  - 0 = barely above the variance threshold (we still flag it, but it’s the weakest).  
-  - 1 = the highest variance in the scene (strongest anomaly).
-- So **higher chance = higher likelihood something is there** in the sense of “stronger backscatter-change signal,” not a calibrated probability. It’s a **relative** score so you can sort or filter (e.g. “show only chance ≥ 0.7”) to focus on the best spots.
+- **chance** is a number from **0 to 1** (0-100%) for each candidate point.
+- It means: **how much more anomalous this pixel is than the threshold.**
+  - 0 = barely above the threshold (weakest candidate).
+  - 1 = the strongest anomaly in the tile.
+- Formula (most scan types): `chance = (score - threshold) / (max_score - threshold)`, clamped 0-1.
+- **Higher chance = stronger anomaly signal**, not a calibrated probability. Use it to sort/filter (e.g. "show only chance >= 0.7").
 
-It is stored in:
+Stored in:
+- **candidates.csv** -- column `chance`
+- **candidates.geojson** -- `properties.chance`
 
-- **candidates.csv** — column `chance`
-- **candidates.geojson** — `properties.chance`
+## InSAR and coherence
+
+**Disabled by default.** Two optional scan types add displacement/coherence:
+
+- **coherence_coh12** -- downloads pre-computed 12-day coherence from CDSE. High variance + high coherence = likely subsurface feature. High variance + low coherence = likely surface noise. Enable in scan.json for high-priority regions.
+- **insar_displacement** -- full InSAR from SLC data via ISCE2. Measures actual ground displacement in mm. Enable for tiles with high-confidence candidates. See `docs/INSAR_AND_DISPLACEMENT.md`.
