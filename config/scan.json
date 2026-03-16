@@ -7,10 +7,22 @@
       "notes": "Known buried river channels, Roman-era sites"
     },
     {
-      "name": "qubbet_el_hawa",
-      "bounds": { "min_lon": 32.85, "max_lon": 32.93, "min_lat": 24.06, "max_lat": 24.14 },
-      "priority": 1,
-      "notes": "Rock-cut tombs, validation site"
+      "name": "rub_al_khali",
+      "bounds": { "min_lon": 45.0, "max_lon": 56.0, "min_lat": 16.0, "max_lat": 23.0 },
+      "priority": 2,
+      "notes": "Arabian Empty Quarter, possible Ubar-era trade routes"
+    },
+    {
+      "name": "taklamakan",
+      "bounds": { "min_lon": 77.0, "max_lon": 88.0, "min_lat": 37.0, "max_lat": 41.0 },
+      "priority": 3,
+      "notes": "Silk Road sites, buried Buddhist settlements"
+    },
+    {
+      "name": "sahel_mali_niger",
+      "bounds": { "min_lon": -5.0, "max_lon": 10.0, "min_lat": 12.0, "max_lat": 18.0 },
+      "priority": 4,
+      "notes": "Garamantian-era settlements, ancient Lake Chad shorelines"
     }
   ],
 
@@ -26,7 +38,8 @@
     "preferred_images": 12,
     "time_window": "2019-01-01/2026-12-31",
     "season_preference": "dry",
-    "orbit_preference": "both"
+    "orbit_preference": "both",
+    "notes": "More images = better variance. 12 preferred for robust statistics with seasonal coverage. Both ascending and descending orbits give different look angles on the same features."
   },
 
   "scan_types": [
@@ -35,45 +48,237 @@
       "category": "temporal",
       "enabled": true,
       "default": true,
-      "description": "Temporal variance of VV+VH, top 5% anomalies.",
+      "description": "Temporal variance of VV+VH, top 5% anomalies. Primary detector.",
+      "method": "Per-pixel var(VV) + var(VH) over time stack. Threshold at 95th percentile.",
+      "detects": "Anything causing radar return to differ from surrounding desert across passes: buried walls, foundations, filled channels, compacted surfaces, large subsurface voids.",
       "score_formula": "var_VV + var_VH",
       "threshold_percentile": 95,
       "chance_formula": "(score - threshold) / (max_score - threshold), clamp 0-1",
       "extra_data_needed": null,
-      "gpu_accelerated": false
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
     },
     {
       "name": "temporal_variance_99",
       "category": "temporal",
       "enabled": true,
-      "description": "Same as variance_95 but top 1%.",
+      "description": "Same as variance_95 but top 1% only. High-confidence candidates.",
+      "method": "Same formula, threshold at 99th percentile.",
+      "detects": "Only the strongest anomalies. Fewer false positives, misses subtle features.",
       "score_formula": "var_VV + var_VH",
       "threshold_percentile": 99,
       "chance_formula": "(score - threshold) / (max_score - threshold), clamp 0-1",
       "extra_data_needed": null,
-      "gpu_accelerated": false
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
+    },
+    {
+      "name": "temporal_cv",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Coefficient of variation -- normalized variance. Catches anomalies in both bright and dark areas.",
+      "method": "CV = std(VV)/mean(VV) + std(VH)/mean(VH). High CV = inconsistent scattering over time relative to brightness.",
+      "detects": "Subsurface features in areas with varying overall brightness. Standard variance is biased toward bright areas; CV normalizes for that.",
+      "score_formula": "std_VV/mean_VV + std_VH/mean_VH",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
+    },
+    {
+      "name": "temporal_mad",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Median absolute deviation -- robust variance. Ignores outlier images.",
+      "method": "MAD = median(|VV - median(VV)|) + median(|VH - median(VH)|). Robust to single bad acquisitions.",
+      "detects": "Same features as variance but resistant to outlier images. If variance and MAD agree, high confidence. If they disagree, the variance hit was probably an outlier.",
+      "score_formula": "mad_VV + mad_VH",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 4
+    },
+    {
+      "name": "seasonal_difference",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Dry season minus wet season mean. Detects moisture-dependent features.",
+      "method": "Split images into dry/wet by date. Compute mean_dry - mean_wet for VV and VH.",
+      "detects": "Buried paleochannels, old irrigation networks, foundations with different moisture retention than surrounding soil.",
+      "score_formula": "abs(mean_dry_VV - mean_wet_VV) + abs(mean_dry_VH - mean_wet_VH)",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3,
+      "config": {
+        "dry_months": [4, 5, 6, 7, 8, 9],
+        "wet_months": [10, 11, 12, 1, 2, 3],
+        "notes": "Adjust per region. These defaults are for Northern Hemisphere deserts."
+      }
+    },
+    {
+      "name": "crosspol_ratio",
+      "category": "polarimetric",
+      "enabled": true,
+      "description": "Cross-polarization ratio anomaly. Detects scattering mechanism differences.",
+      "method": "Compute mean(VH/VV) over time per pixel. Anomalous ratio = different scattering geometry than surroundings.",
+      "detects": "Buried structures with different surface roughness or material composition than surrounding soil. Walls and foundations that cause double-bounce or volume scattering.",
+      "score_formula": "abs(mean(VH/VV) - local_median(VH/VV))",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
+    },
+    {
+      "name": "crosspol_ratio_variance",
+      "category": "polarimetric",
+      "enabled": true,
+      "description": "Temporal variance of the VH/VV ratio. Detects features where scattering mechanism fluctuates.",
+      "method": "Compute VH/VV per pixel per image, then temporal variance of that ratio.",
+      "detects": "Features that change scattering type between passes -- e.g. a buried channel that sometimes fills with moisture.",
+      "score_formula": "var(VH/VV per image)",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
+    },
+    {
+      "name": "texture_glcm",
+      "category": "spatial",
+      "enabled": true,
+      "description": "Grey-Level Co-occurrence Matrix texture on mean backscatter. Detects spatial structure.",
+      "method": "Compute GLCM features (contrast, dissimilarity, homogeneity, energy, correlation) on the mean_VV image using a sliding window.",
+      "detects": "Regular geometric patterns: building grids, wall foundations, road networks, field boundaries.",
+      "score_formula": "glcm_contrast + glcm_dissimilarity (both normalized, anomaly = deviation from local background)",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 15,
+      "config": {
+        "window_size": 21,
+        "distances": [1, 2, 3],
+        "angles": [0, 45, 90, 135],
+        "quantization_levels": 64
+      }
+    },
+    {
+      "name": "edge_detection",
+      "category": "spatial",
+      "enabled": true,
+      "description": "Edge detection on mean backscatter. Detects linear features.",
+      "method": "Apply Sobel filter to mean_VV and mean_VH. Post-process: Hough transform to find straight-line segments.",
+      "detects": "Linear buried features: walls, roads, canals, aqueducts, field boundaries, fortification lines.",
+      "score_formula": "sqrt(sobel_x^2 + sobel_y^2) for VV and VH, combined",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 5,
+      "outputs_extra": {
+        "edges.tif": "Binary edge map",
+        "linear_features.geojson": "Detected line segments with orientation and length"
+      }
+    },
+    {
+      "name": "spatial_autocorrelation",
+      "category": "spatial",
+      "enabled": true,
+      "description": "Local Moran's I -- detects spatial clustering of high/low backscatter values.",
+      "method": "Compute local Moran's I statistic on mean_VV with a spatial weights matrix.",
+      "detects": "Isolated anomalous features surrounded by homogeneous terrain. Clustered anomalies (e.g. a settlement).",
+      "score_formula": "Local Moran's I statistic (z-score), focus on outlier quadrants (HL, LH)",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 10,
+      "config": {
+        "weights": "queen",
+        "window_radius_px": 25
+      }
+    },
+    {
+      "name": "multitemporal_change",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Pairwise change detection -- finds pixels that changed significantly between any two dates.",
+      "method": "For every pair of images (or consecutive pairs), compute absolute difference in VV per pixel.",
+      "detects": "Features that appear/disappear with conditions -- subsurface channels visible only when moisture conditions are right.",
+      "score_formula": "max(abs(VV_i - VV_j)) over all pairs i,j -- per pixel",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 5
     },
     {
       "name": "backscatter_intensity",
       "category": "baseline",
       "enabled": true,
-      "description": "Mean backscatter reference map. No candidates.",
+      "description": "Mean backscatter intensity map. Not anomaly detection -- a baseline reference layer.",
+      "method": "Just the temporal mean of VV and VH. Output as a map.",
+      "detects": "Surface properties: soil moisture, surface roughness, rock outcrops, sand vs gravel. Essential context for interpreting anomaly results.",
       "score_formula": null,
       "threshold_percentile": null,
       "extra_data_needed": null,
       "gpu_accelerated": false,
-      "notes": "Produces intensity_map.tif only."
+      "cpu_seconds_estimate": 2,
+      "notes": "No candidates output. Produces intensity_map.tif only."
+    },
+    {
+      "name": "coherence_coh12",
+      "category": "coherence",
+      "enabled": false,
+      "description": "CARD-COH12 12-day coherence. Detects surface stability changes.",
+      "method": "Download pre-computed 12-day coherence from CDSE. Combine with variance: high variance + high coherence = subsurface feature.",
+      "detects": "Discriminates real subsurface features from surface noise. Most useful as a filter on variance results.",
+      "score_formula": "var_VV + var_VH weighted by coherence",
+      "threshold_percentile": 95,
+      "extra_data_needed": "CARD-COH12 from CDSE (separate API request)",
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 5,
+      "notes": "Disabled by default -- requires additional API requests. Enable for high-priority regions."
+    },
+    {
+      "name": "insar_displacement",
+      "category": "insar",
+      "enabled": false,
+      "description": "Full InSAR displacement from SLC data via ISCE2.",
+      "method": "Download SLC products, run ISCE2 topsStack for coregistration + interferogram + phase unwrapping + geocoding.",
+      "detects": "Subsidence over underground voids (tombs, tunnels, collapsed chambers). Differential compaction.",
+      "score_formula": "abs(displacement_los) where persistent across multiple pairs",
+      "threshold_percentile": 95,
+      "extra_data_needed": "SLC products from CDSE Catalogue (large download, separate processing)",
+      "gpu_accelerated": true,
+      "cpu_seconds_estimate": 1800,
+      "notes": "Disabled by default -- expensive. Enable for tiles with high-confidence candidates. Requires ISCE2 installed."
+    },
+    {
+      "name": "ml_detector",
+      "category": "ml",
+      "enabled": false,
+      "description": "Future: trained model for anomaly classification.",
+      "method": "Feed stack.tif to a trained CNN/ViT. Output per-pixel probability of subsurface feature.",
+      "detects": "Whatever the model is trained on. Could combine signals that no single scan type captures.",
+      "score_formula": "model output probability",
+      "threshold_percentile": null,
+      "extra_data_needed": "Trained model weights",
+      "gpu_accelerated": true,
+      "cpu_seconds_estimate": 30,
+      "notes": "Not implemented. Requires labeled training data from confirmed sites. Placeholder."
     }
   ],
 
   "composite_scores": [
     {
       "name": "combined_top5",
-      "description": "Weighted combination of strongest scan types.",
+      "description": "Weighted combination of the 5 strongest independent scan types. Tiles where multiple scan types agree have highest confidence.",
+      "method": "Normalize each scan type's score to 0-1 across the tile. Combined = weighted sum. Candidate must appear in at least 2 scan types.",
       "components": [
-        { "scan_type": "temporal_variance_95", "weight": 1.0 }
+        { "scan_type": "temporal_variance_95", "weight": 1.0 },
+        { "scan_type": "temporal_cv", "weight": 0.8 },
+        { "scan_type": "crosspol_ratio", "weight": 0.7 },
+        { "scan_type": "texture_glcm", "weight": 0.6 },
+        { "scan_type": "spatial_autocorrelation", "weight": 0.5 }
       ],
-      "min_agreeing_types": 1
+      "min_agreeing_types": 2
     }
   ],
 
@@ -81,13 +286,16 @@
     "cdse_max_pixels_per_request": 2500,
     "cdse_requests_per_minute": 300,
     "cdse_requests_per_month": 10000,
-    "cdse_pu_per_month": 10000
+    "cdse_pu_per_month": 10000,
+    "notes": "Free tier. Commercial account removes monthly caps."
   },
 
   "job_defaults": {
     "batch_size": 5,
     "claim_ttl_minutes": 180,
     "push_max_retries": 10,
-    "push_jitter_max_seconds": 15
+    "push_jitter_max_seconds": 15,
+    "cdse_backoff_base_seconds": 5,
+    "cdse_backoff_max_seconds": 300
   }
 }

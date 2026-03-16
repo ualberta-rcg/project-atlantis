@@ -1,26 +1,14 @@
-# Data: raw downloads (re-fetch via API); processed outputs live in results/
-data/
-test_images/
-
-# Processed rasters in results/ are committed (plan: store all processed images)
-# Ignore .tif outside results/; track results/**/*.tif. Optional: Git LFS for *.tif if repo grows.
-*.tif
-*.tiff
-!results/**/*.tif
-!results/**/*.tiff
-
-# Credentials
 .env
 *.pem
-
-# Venvs
-venv_cdse/
-venvs/
-
-# Slurm
+*.key
+archaeology-deploy-key
+venv/
+__pycache__/
+*.pyc
 *.out
 *.err
-
-# IDE / OS
-.cursor/
+slurm-*.out
+data/
+scratch/
 .DS_Store
+Thumbs.db
