@@ -1,0 +1,12 @@
+{
+  "default_size_km": 2.5,
+  "default_resolution_m": 10,
+  "default_threshold_percentile": 95,
+  "default_time_windows": [
+    ["2023-01-01", "2023-01-15"],
+    ["2023-06-01", "2023-06-15"],
+    ["2023-12-01", "2023-12-15"]
+  ],
+  "max_images_per_tile": 5,
+  "min_images_per_tile": 2
+}

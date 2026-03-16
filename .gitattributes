@@ -1,0 +1,2 @@
+# Git LFS for result rasters (v3 plan)
+results/**/*.tif filter=lfs diff=lfs merge=lfs -text

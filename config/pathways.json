@@ -1,0 +1,14 @@
+[
+  {
+    "name": "variance_95",
+    "threshold_percentile": 95,
+    "run_coherence": false,
+    "run_insar": false
+  },
+  {
+    "name": "variance_99",
+    "threshold_percentile": 99,
+    "run_coherence": false,
+    "run_insar": false
+  }
+]

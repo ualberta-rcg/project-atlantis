@@ -1,0 +1,93 @@
+{
+  "scan_regions": [
+    {
+      "name": "western_desert_egypt",
+      "bounds": { "min_lon": 25.0, "max_lon": 30.0, "min_lat": 22.0, "max_lat": 27.0 },
+      "priority": 1,
+      "notes": "Known buried river channels, Roman-era sites"
+    },
+    {
+      "name": "qubbet_el_hawa",
+      "bounds": { "min_lon": 32.85, "max_lon": 32.93, "min_lat": 24.06, "max_lat": 24.14 },
+      "priority": 1,
+      "notes": "Rock-cut tombs, validation site"
+    }
+  ],
+
+  "tile_defaults": {
+    "size_km": 25,
+    "resolution_m": 10,
+    "overlap_km": 0.5
+  },
+
+  "imagery": {
+    "min_images": 8,
+    "max_images": 15,
+    "preferred_images": 12,
+    "time_window": "2019-01-01/2026-12-31",
+    "season_preference": "dry",
+    "orbit_preference": "both"
+  },
+
+  "scan_types": [
+    {
+      "name": "temporal_variance_95",
+      "category": "temporal",
+      "enabled": true,
+      "default": true,
+      "description": "Temporal variance of VV+VH, top 5% anomalies.",
+      "score_formula": "var_VV + var_VH",
+      "threshold_percentile": 95,
+      "chance_formula": "(score - threshold) / (max_score - threshold), clamp 0-1",
+      "extra_data_needed": null,
+      "gpu_accelerated": false
+    },
+    {
+      "name": "temporal_variance_99",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Same as variance_95 but top 1%.",
+      "score_formula": "var_VV + var_VH",
+      "threshold_percentile": 99,
+      "chance_formula": "(score - threshold) / (max_score - threshold), clamp 0-1",
+      "extra_data_needed": null,
+      "gpu_accelerated": false
+    },
+    {
+      "name": "backscatter_intensity",
+      "category": "baseline",
+      "enabled": true,
+      "description": "Mean backscatter reference map. No candidates.",
+      "score_formula": null,
+      "threshold_percentile": null,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "notes": "Produces intensity_map.tif only."
+    }
+  ],
+
+  "composite_scores": [
+    {
+      "name": "combined_top5",
+      "description": "Weighted combination of strongest scan types.",
+      "components": [
+        { "scan_type": "temporal_variance_95", "weight": 1.0 }
+      ],
+      "min_agreeing_types": 1
+    }
+  ],
+
+  "api_limits": {
+    "cdse_max_pixels_per_request": 2500,
+    "cdse_requests_per_minute": 300,
+    "cdse_requests_per_month": 10000,
+    "cdse_pu_per_month": 10000
+  },
+
+  "job_defaults": {
+    "batch_size": 5,
+    "claim_ttl_minutes": 180,
+    "push_max_retries": 10,
+    "push_jitter_max_seconds": 15
+  }
+}
