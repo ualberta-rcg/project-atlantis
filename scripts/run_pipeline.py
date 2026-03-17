@@ -237,6 +237,14 @@ def process_one_tile_v3(tile, scan_config, worker_id, workdir=None):
     # ---- GENERATE PNGs ----
     generate_pngs(out_dir)
 
+    # ---- GENERATE FINAL REPORT ----
+    try:
+        from tile_report import generate_report
+        n_ranked = generate_report(out_dir)
+        print(f"[report] {n_ranked} ranked candidates in final report", flush=True)
+    except Exception as e:
+        print(f"[report] Warning: {e}", file=sys.stderr, flush=True)
+
     # ---- COPY TO REPO (if using workdir) ----
     if workdir:
         repo_out = os.path.join(RESULTS_DIR, tile_id)
