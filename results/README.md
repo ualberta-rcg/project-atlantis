@@ -1,11 +1,16 @@
 # Results
 
-Per-tile results from the v3 pipeline. Each tile gets:
+Scan results organized by coordinate-based tile ID: `tile_<min_lon>_<min_lat>`.
 
-- `results/<tile_id>/stack.tif` -- shared base layer (mean/var/std/median VV+VH)
-- `results/<tile_id>/<scan_type>/` -- anomaly.tif, candidates.geojson, candidates.csv, metadata.json
-- `results/<tile_id>/process_record.json` -- inputs, scan types run, candidate counts
+Each tile directory contains **everything needed to replicate the analysis**:
+- `raw/` -- all fetched S1 images (.tif) + PNG previews
+- `stack.tif` -- computed temporal stack (mean/var/std/median VV+VH)
+- `stack_mean_vv.png`, `stack_var_vv.png` -- stack previews
+- `<scan_type>/` -- anomaly.tif, anomaly.png, candidates.geojson, candidates.csv, metadata.json
+- `process_record.json` -- full record of inputs, parameters, outputs, timing
 
-Aggregate: `results/all_candidates.geojson` -- rebuilt by `python scripts/rebuild_aggregate.py`.
+Aggregate: `all_candidates.geojson` -- rebuilt by `python scripts/rebuild_aggregate.py`.
 
-Open candidates in QGIS or [geojson.io](https://geojson.io). See `docs/RESULTS_LAYOUT.md` for full layout.
+PNG files render directly on GitHub for quick visual inspection.
+
+See `docs/RESULTS_LAYOUT.md` for full layout and data sizes.

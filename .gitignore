@@ -5,10 +5,7 @@ archaeology-deploy-key
 venv/
 __pycache__/
 *.pyc
-*.out
-*.err
 slurm-*.out
-data/
 scratch/
 .DS_Store
 Thumbs.db
