@@ -1,0 +1,228 @@
+==============================================
+Atlantis pipeline — Tue Mar 17 01:53:19 UTC 2026
+  Tile:     tile_32.8500_24.0600
+  Job ID:   1569
+  Node:     eureka2
+  Project:  /home/clg_98da5933b7a1/project-atlantis
+  Workdir:  /tmp/atlantis_1569
+==============================================
+Activated venv: /home/clg_98da5933b7a1/venv_cdse/bin/python
+
+============================================================
+[tile] tile_32.8500_24.0600  bbox=[32.85, 24.06, 32.93, 24.14]  500x500px
+[tile] Working in: /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600
+============================================================
+
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/fetch_s1_tile.py tile_32.8500_24.0600 --bbox 32.85 24.06 32.93 24.14 --data-dir /tmp/atlantis_1569/atlantis_slurm-1569 --size 500
+Fetching 12 images for tile_32.8500_24.0600 at 500x500 px
+Bbox: [32.85, 24.06, 32.93, 24.14]
+Token obtained.
+  [1/12] 2019-01-01 to 2019-01-15 ... OK (1.9 MB)
+  [2/12] 2019-09-01 to 2019-09-15 ... OK (1.9 MB)
+  [3/12] 2020-05-01 to 2020-05-15 ... OK (1.9 MB)
+  [4/12] 2020-12-30 to 2021-01-13 ... OK (1.9 MB)
+  [5/12] 2021-08-30 to 2021-09-13 ... OK (1.9 MB)
+  [6/12] 2022-04-30 to 2022-05-14 ... OK (1.9 MB)
+  [7/12] 2022-12-29 to 2023-01-12 ... OK (1.9 MB)
+  [8/12] 2023-08-29 to 2023-09-12 ... OK (1.9 MB)
+  [9/12] 2024-04-28 to 2024-05-12 ... OK (1.9 MB)
+  [10/12] 2024-12-27 to 2025-01-10 ... OK (1.9 MB)
+  [11/12] 2025-08-27 to 2025-09-10 ... OK (1.9 MB)
+  [12/12] 2026-04-27 to 2026-05-11 ... OK (0.0 MB)
+Done. 12 images saved to /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw
+[fetch] 12 images downloaded
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/build_stack.py -o /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2019-01-01_to_2019-01-15.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2019-09-01_to_2019-09-15.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2020-05-01_to_2020-05-15.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2020-12-30_to_2021-01-13.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2021-08-30_to_2021-09-13.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2022-04-30_to_2022-05-14.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2022-12-29_to_2023-01-12.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2023-08-29_to_2023-09-12.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2024-04-28_to_2024-05-12.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2024-12-27_to_2025-01-10.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2025-08-27_to_2025-09-10.tif /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/raw/s1_2026-04-27_to_2026-05-11.tif
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif temporal_variance_99 /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_99 tile_32.8500_24.0600
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_99/anomaly.tif
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_99/candidates.csv (2500 candidates)
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_99/candidates.geojson
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_99/metadata.json
+[scan] temporal_variance_99: 2500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif temporal_variance_999 /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_999 tile_32.8500_24.0600
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_999/anomaly.tif
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_999/candidates.csv (250 candidates)
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_999/candidates.geojson
+Wrote /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_variance_999/metadata.json
+[scan] temporal_variance_999: 250 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif temporal_cv /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_cv tile_32.8500_24.0600
+  temporal_cv: 12500 candidates (threshold=1.991652e+00)
+[scan] temporal_cv: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif temporal_mad /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/temporal_mad tile_32.8500_24.0600
+  temporal_mad: 12500 candidates (threshold=6.753700e-02)
+[scan] temporal_mad: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif seasonal_difference /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/seasonal_difference tile_32.8500_24.0600
+  seasonal_difference: 12500 candidates (threshold=6.753700e-02)
+[scan] seasonal_difference: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif crosspol_ratio /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/crosspol_ratio tile_32.8500_24.0600
+  crosspol_ratio: 12471 candidates (threshold=1.790010e-01)
+[scan] crosspol_ratio: 12471 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif crosspol_ratio_variance /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/crosspol_ratio_variance tile_32.8500_24.0600
+  crosspol_ratio_variance: 12500 candidates (threshold=6.483627e-02)
+[scan] crosspol_ratio_variance: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif texture_glcm /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/texture_glcm tile_32.8500_24.0600
+  texture_glcm: 12500 candidates (threshold=3.728163e-01)
+[scan] texture_glcm: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif edge_detection /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/edge_detection tile_32.8500_24.0600
+  edge_detection: 12500 candidates (threshold=1.716679e+00)
+[scan] edge_detection: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif spatial_autocorrelation /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/spatial_autocorrelation tile_32.8500_24.0600
+  spatial_autocorrelation: 12500 candidates (threshold=1.438638e+00)
+[scan] spatial_autocorrelation: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif multitemporal_change /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/multitemporal_change tile_32.8500_24.0600
+  multitemporal_change: 12500 candidates (threshold=4.785880e-01)
+[scan] multitemporal_change: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif backscatter_intensity /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/backscatter_intensity tile_32.8500_24.0600
+  backscatter_intensity: baseline map written
+[scan] backscatter_intensity: 0 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif speckle_divergence /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/speckle_divergence tile_32.8500_24.0600
+  speckle_divergence: 2500 candidates (threshold=4.742075e+01)
+[scan] speckle_divergence: 2500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif db_variance /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/db_variance tile_32.8500_24.0600
+  db_variance: 2500 candidates (threshold=7.453424e+01)
+[scan] db_variance: 2500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif moisture_differential /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/moisture_differential tile_32.8500_24.0600
+  moisture_differential: 12500 candidates (threshold=2.301581e+00)
+[scan] moisture_differential: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif depolarization_fraction /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/depolarization_fraction tile_32.8500_24.0600
+  depolarization_fraction: 12487 candidates (threshold=1.181031e-01)
+[scan] depolarization_fraction: 12487 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif local_contrast /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/local_contrast tile_32.8500_24.0600
+  local_contrast: 12500 candidates (threshold=3.998255e+00)
+[scan] local_contrast: 12500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif hotspot_cluster /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/hotspot_cluster tile_32.8500_24.0600
+  hotspot_cluster: 3775 hotspots (from 157708 candidates across 16 types)
+[scan] hotspot_cluster: 3775 candidates
+[png] Generated 30 previews in /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600
+[report] tile_32.8500_24.0600: 3949 ranked candidates, 28 at max confidence
+  -> /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/REPORT.md
+  -> /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/top_candidates.geojson
+  -> /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/top_candidates.csv
+[report] 3949 ranked candidates in final report
+[copy] /tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600 -> /home/clg_98da5933b7a1/project-atlantis/results/tile_32.8500_24.0600
+[copy] Done. Cleaning workdir.
+
+[done] tile_32.8500_24.0600: 987.78s, 12 images, 18 scan types
+[run] git add results/ processed_tiles.jsonl claimed_tiles.jsonl
+[run] git commit -m Results: worker slurm-1569 @ 2026-03-17T02:09:54Z
+[main 545f3a7] Results: worker slurm-1569 @ 2026-03-17T02:09:54Z
+ 117 files changed, 3235880 insertions(+)
+ create mode 100644 results/tile_32.8500_24.0600/REPORT.md
+ create mode 100644 results/tile_32.8500_24.0600/backscatter_intensity/intensity_map.png
+ create mode 100644 results/tile_32.8500_24.0600/backscatter_intensity/intensity_map.tif
+ create mode 100644 results/tile_32.8500_24.0600/backscatter_intensity/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio_variance/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio_variance/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio_variance/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio_variance/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/crosspol_ratio_variance/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/db_variance/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/db_variance/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/db_variance/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/db_variance/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/db_variance/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/depolarization_fraction/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/depolarization_fraction/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/depolarization_fraction/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/depolarization_fraction/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/depolarization_fraction/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/edge_detection/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/edge_detection/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/edge_detection/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/edge_detection/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/edge_detection/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/hotspot_cluster/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/hotspot_cluster/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/hotspot_cluster/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/local_contrast/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/local_contrast/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/local_contrast/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/local_contrast/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/local_contrast/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/moisture_differential/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/moisture_differential/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/moisture_differential/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/moisture_differential/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/moisture_differential/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/multitemporal_change/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/multitemporal_change/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/multitemporal_change/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/multitemporal_change/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/multitemporal_change/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/process_record.json
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2019-01-01_to_2019-01-15.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2019-01-01_to_2019-01-15.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2019-09-01_to_2019-09-15.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2019-09-01_to_2019-09-15.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2020-05-01_to_2020-05-15.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2020-05-01_to_2020-05-15.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2020-12-30_to_2021-01-13.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2020-12-30_to_2021-01-13.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2021-08-30_to_2021-09-13.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2021-08-30_to_2021-09-13.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2022-04-30_to_2022-05-14.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2022-04-30_to_2022-05-14.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2022-12-29_to_2023-01-12.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2022-12-29_to_2023-01-12.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2023-08-29_to_2023-09-12.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2023-08-29_to_2023-09-12.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2024-04-28_to_2024-05-12.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2024-04-28_to_2024-05-12.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2024-12-27_to_2025-01-10.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2024-12-27_to_2025-01-10.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2025-08-27_to_2025-09-10.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2025-08-27_to_2025-09-10.tif
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2026-04-27_to_2026-05-11.png
+ create mode 100644 results/tile_32.8500_24.0600/raw/s1_2026-04-27_to_2026-05-11.tif
+ create mode 100644 results/tile_32.8500_24.0600/seasonal_difference/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/seasonal_difference/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/seasonal_difference/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/seasonal_difference/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/seasonal_difference/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/spatial_autocorrelation/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/spatial_autocorrelation/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/spatial_autocorrelation/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/spatial_autocorrelation/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/spatial_autocorrelation/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/speckle_divergence/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/speckle_divergence/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/speckle_divergence/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/speckle_divergence/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/speckle_divergence/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/stack.png
+ create mode 100644 results/tile_32.8500_24.0600/stack.tif
+ create mode 100644 results/tile_32.8500_24.0600/temporal_cv/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/temporal_cv/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/temporal_cv/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/temporal_cv/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/temporal_cv/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/temporal_mad/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/temporal_mad/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/temporal_mad/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/temporal_mad/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/temporal_mad/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_99/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_99/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_99/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_99/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_99/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_999/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_999/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_999/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_999/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/temporal_variance_999/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/texture_glcm/anomaly.png
+ create mode 100644 results/tile_32.8500_24.0600/texture_glcm/anomaly.tif
+ create mode 100644 results/tile_32.8500_24.0600/texture_glcm/candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/texture_glcm/candidates.geojson
+ create mode 100644 results/tile_32.8500_24.0600/texture_glcm/metadata.json
+ create mode 100644 results/tile_32.8500_24.0600/top_candidates.csv
+ create mode 100644 results/tile_32.8500_24.0600/top_candidates.geojson
+[push] Success.
+
+Job finished at Tue Mar 17 02:10:12 UTC 2026
