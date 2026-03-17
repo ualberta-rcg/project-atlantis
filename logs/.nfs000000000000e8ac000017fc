@@ -34,3 +34,26 @@ Untracked files:
 
 Dropped refs/stash@{0} (259a617ac17c0282331a799fb129a1f3166c06f1)
 [run] git add results/ processed_tiles.jsonl claimed_tiles.jsonl logs/
+[run] git commit -m Results: worker slurm-1591_1 @ 2026-03-17T02:46:22Z
+[main 54bca35] Results: worker slurm-1591_1 @ 2026-03-17T02:46:22Z
+ 9 files changed, 50 insertions(+)
+ create mode 100644 logs/.nfs000000000000e2f9000017fe
+ create mode 100644 logs/.nfs000000000000e2fa000017fd
+ create mode 100644 logs/.nfs000000000000e8ac000017fc
+ create mode 100644 logs/.nfs000000000000e8ad000017fb
+ create mode 100644 logs/atlantis_1591_1.err
+ create mode 100644 logs/atlantis_1591_1.out
+ create mode 100644 logs/atlantis_1591_2.err
+ create mode 100644 logs/atlantis_1591_2.out
+[push] Success.
+
+============================================================
+[tile] tile_29.5000_25.6802  bbox=[29.5, 25.680180180180187, 29.55001125024839, 25.725225225225234]  500x500px
+[tile] Working in: /tmp/atlantis_1591_1/atlantis_slurm-1591_1/tile_29.5000_25.6802
+============================================================
+
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/fetch_s1_tile.py tile_29.5000_25.6802 --bbox 29.5 25.680180180180187 29.55001125024839 25.725225225225234 --data-dir /tmp/atlantis_1591_1/atlantis_slurm-1591_1 --size 500
+Fetching 12 images for tile_29.5000_25.6802 at 500x500 px
+Bbox: [29.5, 25.680180180180187, 29.55001125024839, 25.725225225225234]
+Token obtained.
+  [1/12] 2019-01-01 to 2019-01-15 ... 

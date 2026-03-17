@@ -3,3 +3,4 @@
 {"tile_id": "tile_29.5000_25.5450", "claimed_at": "2026-03-17T02:40:52Z", "ttl_minutes": 180, "worker_id": "eureka-login1-2975021"}
 {"tile_id": "tile_29.5000_25.5901", "claimed_at": "2026-03-17T02:40:59Z", "ttl_minutes": 180, "worker_id": "eureka-login1-2975071"}
 {"tile_id": "tile_29.5000_25.6802", "claimed_at": "2026-03-17T02:46:22Z", "ttl_minutes": 180, "worker_id": "slurm-1591_1"}
+{"tile_id": "tile_29.5000_25.5000", "claimed_at": "2026-03-17T02:46:30Z", "ttl_minutes": 180, "worker_id": "slurm-1591_2"}

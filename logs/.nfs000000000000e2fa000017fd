@@ -1,0 +1,11 @@
+error: unable to unlink old 'logs/.nfs000000000000e2f9000017fe': Device or resource busy
+error: unable to unlink old 'logs/.nfs000000000000e8ac000017fc': Device or resource busy
+error: unable to unlink old 'logs/.nfs000000000000e8ad000017fb': Device or resource busy
+fatal: Could not reset index file to revision 'HEAD'.
+error: cannot pull with rebase: You have unstaged changes.
+error: additionally, your index contains uncommitted changes.
+error: Please commit or stash them.
+error: Your local changes to the following files would be overwritten by merge:
+	logs/.nfs000000000000e2f9000017fe
+Please commit your changes or stash them before you merge.
+Aborting
