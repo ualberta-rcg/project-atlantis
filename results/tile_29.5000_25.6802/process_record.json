@@ -1,0 +1,84 @@
+{
+  "tile_id": "tile_29.5000_25.6802",
+  "inputs": {
+    "bbox": [
+      29.5,
+      25.680180180180187,
+      29.55001125024839,
+      25.725225225225234
+    ],
+    "resolution_m": 10.0,
+    "size_px": [
+      500,
+      500
+    ],
+    "image_count": 12
+  },
+  "coregistration": {
+    "method": "api_reprojection",
+    "note": "Same bbox and dimensions from CDSE Process API."
+  },
+  "scan_types_run": {
+    "temporal_variance_99": {
+      "candidates": 0
+    },
+    "temporal_variance_999": {
+      "candidates": 0
+    },
+    "temporal_cv": {
+      "candidates": 0
+    },
+    "temporal_mad": {
+      "candidates": 0
+    },
+    "seasonal_difference": {
+      "candidates": 0
+    },
+    "crosspol_ratio": {
+      "candidates": 0
+    },
+    "crosspol_ratio_variance": {
+      "candidates": 0
+    },
+    "texture_glcm": {
+      "candidates": 0
+    },
+    "edge_detection": {
+      "candidates": 0
+    },
+    "spatial_autocorrelation": {
+      "candidates": 0
+    },
+    "multitemporal_change": {
+      "candidates": 0
+    },
+    "backscatter_intensity": {
+      "candidates": 0
+    },
+    "speckle_divergence": {
+      "candidates": 0
+    },
+    "db_variance": {
+      "candidates": 0
+    },
+    "moisture_differential": {
+      "candidates": 0
+    },
+    "depolarization_fraction": {
+      "candidates": 0
+    },
+    "local_contrast": {
+      "candidates": 0
+    },
+    "hotspot_cluster": {
+      "candidates": 0
+    }
+  },
+  "run_metadata": {
+    "worker_id": "slurm-1591_1",
+    "cluster_id": null,
+    "slurm_job_id": "1592",
+    "timestamp_iso": "2026-03-17T02:54:56Z",
+    "runtime_seconds": 512.44
+  }
+}

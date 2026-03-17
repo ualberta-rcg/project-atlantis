@@ -1,0 +1,9 @@
+{
+  "scan_type": "local_contrast",
+  "tile_id": "tile_29.5000_25.6802",
+  "percentile_threshold": 95,
+  "threshold_used": 0.0,
+  "num_candidates": 0,
+  "candidate_count": 0,
+  "run_time_utc": "2026-03-17T02:54:55.840416Z"
+}
