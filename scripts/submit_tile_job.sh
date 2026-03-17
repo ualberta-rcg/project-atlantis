@@ -57,6 +57,7 @@ for v in CDSE_CLIENT_ID CDSE_CLIENT_SECRET GIT_SSH_COMMAND; do
     fi
 done
 export CDSE_CLIENT_ID CDSE_CLIENT_SECRET GIT_SSH_COMMAND
+unset http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY
 
 # Pull latest repo state
 cd "$PROJECT_ROOT"
