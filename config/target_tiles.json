@@ -12,5 +12,19 @@
     "size_km": 5,
     "resolution_m": 10,
     "site_name": "ubar"
+  },
+  {
+    "tile_id": "tile_32.8500_24.0600",
+    "bbox": [32.850, 24.060, 32.930, 24.140],
+    "size_km": 5,
+    "resolution_m": 10,
+    "site_name": "qubbet_el_hawa"
+  },
+  {
+    "tile_id": "tile_30.8740_29.2470",
+    "bbox": [30.874, 29.247, 30.926, 29.293],
+    "size_km": 5,
+    "resolution_m": 10,
+    "site_name": "hawara_labyrinth"
   }
 ]
