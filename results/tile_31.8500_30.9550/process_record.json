@@ -1,0 +1,66 @@
+{
+  "tile_id": "tile_31.8500_30.9550",
+  "inputs": {
+    "bbox": [
+      31.85,
+      30.955,
+      31.905,
+      31.0
+    ],
+    "resolution_m": 10,
+    "size_px": [
+      500,
+      500
+    ],
+    "image_count": 12
+  },
+  "coregistration": {
+    "method": "api_reprojection",
+    "note": "Same bbox and dimensions from CDSE Process API."
+  },
+  "scan_types_run": {
+    "temporal_variance_99": {
+      "candidates": 2500
+    },
+    "temporal_variance_999": {
+      "candidates": 250
+    },
+    "temporal_cv": {
+      "candidates": 12500
+    },
+    "temporal_mad": {
+      "candidates": 12500
+    },
+    "seasonal_difference": {
+      "candidates": 12500
+    },
+    "crosspol_ratio": {
+      "candidates": 12468
+    },
+    "crosspol_ratio_variance": {
+      "candidates": 12500
+    },
+    "texture_glcm": {
+      "candidates": 12500
+    },
+    "edge_detection": {
+      "candidates": 12500
+    },
+    "spatial_autocorrelation": {
+      "candidates": 12500
+    },
+    "multitemporal_change": {
+      "candidates": 12500
+    },
+    "backscatter_intensity": {
+      "candidates": 0
+    }
+  },
+  "run_metadata": {
+    "worker_id": "slurm-1566",
+    "cluster_id": null,
+    "slurm_job_id": "1566",
+    "timestamp_iso": "2026-03-17T01:25:34Z",
+    "runtime_seconds": 468.18
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "scan_type": "temporal_cv",
+  "tile_id": "tile_31.8500_30.9550",
+  "percentile_threshold": 95,
+  "threshold_used": 2.1250790750802744,
+  "num_candidates": 12500,
+  "candidate_count": 12500,
+  "run_time_utc": "2026-03-17T01:25:16.797354Z"
+}

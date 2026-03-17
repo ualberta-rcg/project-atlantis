@@ -1,0 +1,9 @@
+{
+  "scan_type": "temporal_mad",
+  "tile_id": "tile_31.8500_30.9550",
+  "percentile_threshold": 95,
+  "threshold_used": 0.07846101503819226,
+  "num_candidates": 12500,
+  "candidate_count": 12500,
+  "run_time_utc": "2026-03-17T01:25:17.958118Z"
+}
