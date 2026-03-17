@@ -1,0 +1,17 @@
+{
+  "stack_path": "/home/clg_98da5933b7a1/project-atlantis/results/tile_30.8740_29.2470/stack.tif",
+  "tile_id": "tile_30.8740_29.2470",
+  "site_id": "tile_30.8740_29.2470",
+  "pathway": "temporal_variance_999",
+  "bbox": null,
+  "date_range": null,
+  "run_time_seconds": null,
+  "percentile_threshold": 99.9,
+  "candidate_count": 250,
+  "min_score": null,
+  "threshold_used": 4.13711034035792,
+  "num_candidates": 250,
+  "chance_meaning": "0-1: how far above variance threshold (higher = more anomalous, not InSAR displacement)",
+  "method": "temporal variance of backscatter (VV+VH over 2-5 dates); no InSAR/coherence/displacement",
+  "run_time_utc": "2026-03-17T00:36:48.317720Z"
+}

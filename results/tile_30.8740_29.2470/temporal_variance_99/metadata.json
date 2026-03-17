@@ -1,7 +1,7 @@
 {
-  "stack_path": "/home/clg_98da5933b7a1/project-atlantis/results/hawara_labyrinth/stack.tif",
-  "tile_id": "hawara_labyrinth",
-  "site_id": "hawara_labyrinth",
+  "stack_path": "/home/clg_98da5933b7a1/project-atlantis/results/tile_30.8740_29.2470/stack.tif",
+  "tile_id": "tile_30.8740_29.2470",
+  "site_id": "tile_30.8740_29.2470",
   "pathway": "temporal_variance_99",
   "bbox": null,
   "date_range": null,
@@ -13,5 +13,5 @@
   "num_candidates": 2500,
   "chance_meaning": "0-1: how far above variance threshold (higher = more anomalous, not InSAR displacement)",
   "method": "temporal variance of backscatter (VV+VH over 2-5 dates); no InSAR/coherence/displacement",
-  "run_time_utc": "2026-03-17T00:22:33.519871Z"
+  "run_time_utc": "2026-03-17T00:36:47.807043Z"
 }

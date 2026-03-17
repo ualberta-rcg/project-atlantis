@@ -34,13 +34,13 @@
     "crs": "EPSG:4326"
   },
   "scan_types_run": {
-    "temporal_variance_95": {
-      "threshold": 95,
-      "candidates": 12500
-    },
     "temporal_variance_99": {
       "threshold": 99,
       "candidates": 2500
+    },
+    "temporal_variance_999": {
+      "threshold": 99.9,
+      "candidates": 250
     },
     "backscatter_intensity": {
       "candidates": 0,
