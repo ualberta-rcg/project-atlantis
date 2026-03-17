@@ -1,0 +1,29 @@
+==============================================
+Atlantis pipeline — Tue Mar 17 02:27:18 UTC 2026
+  Tile:     AUTO (batch mode)
+  Job ID:   1576_1
+  Node:     eureka2
+  Project:  /home/clg_98da5933b7a1/project-atlantis
+  Workdir:  /tmp/atlantis_1576_1
+  Batch sz: 2
+==============================================
+Activated venv: /home/clg_98da5933b7a1/venv_cdse/bin/python
+[run] git pull --rebase
+[run] git add results/ processed_tiles.jsonl claimed_tiles.jsonl
+[run] git commit -m Results: worker slurm-1576_1 @ 2026-03-17T02:27:19Z
+[main 7ce23fa] Results: worker slurm-1576_1 @ 2026-03-17T02:27:19Z
+ 1 file changed, 2 insertions(+)
+[push] Success.
+
+============================================================
+[tile] tile_29.5000_25.7252  bbox=[29.5, 25.725225225225234, 29.55001125024839, 25.77027027027028]  500x500px
+[tile] Working in: /tmp/atlantis_1576_1/atlantis_slurm-1576_1/tile_29.5000_25.7252
+============================================================
+
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/fetch_s1_tile.py tile_29.5000_25.7252 --bbox 29.5 25.725225225225234 29.55001125024839 25.77027027027028 --data-dir /tmp/atlantis_1576_1/atlantis_slurm-1576_1 --size 500
+Fetching 12 images for tile_29.5000_25.7252 at 500x500 px
+Bbox: [29.5, 25.725225225225234, 29.55001125024839, 25.77027027027028]
+Token obtained.
+  [1/12] 2019-01-01 to 2019-01-15 ... OK (1.9 MB)
+  [2/12] 2019-09-01 to 2019-09-15 ... OK (1.9 MB)
+  [3/12] 2020-05-01 to 2020-05-15 ... 

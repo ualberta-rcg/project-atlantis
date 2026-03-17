@@ -75,26 +75,35 @@ else
     read -r
 fi
 
-# ---- 3. Env vars in .bashrc ----
+# ---- 3. Env vars ----
 echo ""
 echo "[3/5] Environment variables..."
-MARKER="# --- Archaeology Radar Scan (project-atlantis) ---"
-if grep -q "$MARKER" ~/.bashrc 2>/dev/null; then
-    echo "  Already configured in .bashrc"
+ENV_FILE="${HOME}/.atlantis_env"
+if [[ -f "$ENV_FILE" ]]; then
+    echo "  ${ENV_FILE} exists"
 else
-    cat >> ~/.bashrc << 'ENVEOF'
-
-# --- Archaeology Radar Scan (project-atlantis) ---
+    cat > "$ENV_FILE" << ENVEOF
+# Atlantis pipeline environment — sourced by jobs and .bashrc
 export REPO_URL="git@github.com:ualberta-rcg/project-atlantis.git"
-export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/archaeology-deploy-key -o StrictHostKeyChecking=accept-new"
+export GIT_SSH_COMMAND="ssh -i \$HOME/.ssh/archaeology-deploy-key -o StrictHostKeyChecking=accept-new"
 # CDSE API credentials — get from https://dataspace.copernicus.eu (Dashboard → OAuth clients)
 export CDSE_CLIENT_ID=""
 export CDSE_CLIENT_SECRET=""
 ENVEOF
-    echo "  Added env vars to ~/.bashrc"
-    echo "  *** Edit ~/.bashrc to fill in CDSE_CLIENT_ID and CDSE_CLIENT_SECRET ***"
+    chmod 600 "$ENV_FILE"
+    echo "  Created ${ENV_FILE}"
+    echo "  *** Edit ${ENV_FILE} to fill in CDSE_CLIENT_ID and CDSE_CLIENT_SECRET ***"
 fi
-source ~/.bashrc 2>/dev/null || true
+
+# Also source from .bashrc for interactive use
+MARKER="# Source Atlantis env"
+if ! grep -q "$MARKER" ~/.bashrc 2>/dev/null; then
+    echo "" >> ~/.bashrc
+    echo "$MARKER" >> ~/.bashrc
+    echo "[[ -f \"\${HOME}/.atlantis_env\" ]] && source \"\${HOME}/.atlantis_env\"" >> ~/.bashrc
+    echo "  Added source line to .bashrc"
+fi
+source "$ENV_FILE" 2>/dev/null || true
 
 # ---- 4. Clone repo ----
 echo ""

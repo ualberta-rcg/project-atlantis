@@ -1,0 +1,12 @@
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+Traceback (most recent call last):
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 363, in <module>
+    main()
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 326, in main
+    batch = pick_work_v3(target_tiles, processed, claimed, batch_size, ttl_minutes)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 104, in pick_work_v3
+    if claimed_at + timedelta(minutes=ttl) > now:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes

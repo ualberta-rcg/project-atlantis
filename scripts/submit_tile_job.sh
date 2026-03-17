@@ -34,6 +34,12 @@ VENV="${VENV:-${HOME}/venv_cdse}"
 JOB_ID="${SLURM_ARRAY_JOB_ID:-${SLURM_JOB_ID:-$$}}_${SLURM_ARRAY_TASK_ID:-0}"
 WORKDIR="/tmp/atlantis_${JOB_ID}"
 
+# Stagger array task starts to avoid coordination races (0-60s based on task ID)
+if [[ -n "${SLURM_ARRAY_TASK_ID:-}" ]]; then
+    JITTER=$(( (SLURM_ARRAY_TASK_ID * 17) % 60 ))
+    sleep "$JITTER"
+fi
+
 echo "=============================================="
 echo "Atlantis pipeline — $(date)"
 echo "  Tile:     ${TILE_ID:-AUTO (batch mode)}"
@@ -44,15 +50,20 @@ echo "  Workdir:  $WORKDIR"
 echo "  Batch sz: $BATCH_SIZE"
 echo "=============================================="
 
+# Source env vars (separate from .bashrc which skips non-interactive shells)
+if [[ -f "${HOME}/.atlantis_env" ]]; then
+    source "${HOME}/.atlantis_env"
+elif [[ -f "${HOME}/.bashrc" ]]; then
+    # Fallback: try bashrc (may fail in non-interactive shells)
+    bash -c "source ${HOME}/.bashrc 2>/dev/null; env" | grep -E '^(CDSE_|GIT_SSH|REPO_URL)' > /tmp/.atlantis_env_$$ 2>/dev/null
+    source /tmp/.atlantis_env_$$ 2>/dev/null || true
+    rm -f /tmp/.atlantis_env_$$
+fi
+
 # Activate venv
 if [[ -d "$VENV" ]]; then
     source "${VENV}/bin/activate"
     echo "Activated venv: $(which python)"
-fi
-
-# Source bashrc for env vars if not already set
-if [[ -z "${CDSE_CLIENT_ID:-}" ]]; then
-    source "${HOME}/.bashrc" 2>/dev/null || true
 fi
 
 # Ensure env vars

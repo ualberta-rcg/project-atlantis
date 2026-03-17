@@ -1,0 +1,5 @@
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:ualberta-rcg/project-atlantis.git
+   03fe7d0..7ce23fa  main -> main
+[2026-03-17T02:29:38.269] error: *** JOB 1577 ON eureka2 CANCELLED AT 2026-03-17T02:29:38 DUE to SIGNAL Terminated ***

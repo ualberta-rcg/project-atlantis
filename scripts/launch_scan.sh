@@ -176,9 +176,10 @@ if [[ "$DRY_RUN" == "true" ]]; then
 fi
 
 # %20 = max 20 concurrent jobs (prevents API flooding)
+# Use --export=NONE so env doesn't leak (job sources .bashrc itself)
 JOBID=$(sbatch \
     --array=1-${JOBS}%20 \
-    --export=ALL,BATCH_SIZE=${BATCH_SIZE} \
+    --export=NONE,BATCH_SIZE=${BATCH_SIZE} \
     --time="${TIME}" \
     --partition="${PARTITION}" \
     --account="${ACCOUNT}" \

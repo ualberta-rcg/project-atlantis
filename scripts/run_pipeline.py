@@ -108,20 +108,53 @@ def pick_work_v3(target_tiles, processed_records, claimed_records, batch_size, t
     return available[:batch_size]
 
 
+GIT_LOCK = os.path.join(PROJECT_ROOT, ".git", "atlantis.lock")
+
+
+def git_locked(func):
+    """Serialize Git operations across concurrent jobs sharing the same repo."""
+    import fcntl
+
+    def wrapper(*args, **kwargs):
+        os.makedirs(os.path.dirname(GIT_LOCK), exist_ok=True)
+        fd = open(GIT_LOCK, "w")
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            return func(*args, **kwargs)
+        finally:
+            fcntl.flock(fd, fcntl.LOCK_UN)
+            fd.close()
+    return wrapper
+
+
+@git_locked
 def push_with_retry(max_retries=10):
     for attempt in range(1, max_retries + 1):
-        run(["git", "add", "results/", "processed_tiles.jsonl", "claimed_tiles.jsonl"], check=False)
-        run(["git", "commit", "-m", f"Results: worker {get_worker_id()} @ {datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}"], check=False)
+        run(["git", "add", "results/", "processed_tiles.jsonl", "claimed_tiles.jsonl",
+             "logs/"], check=False)
+        run(["git", "commit", "-m",
+             f"Results: worker {get_worker_id()} @ {datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}"],
+            check=False)
         r = subprocess.run(["git", "push"], cwd=PROJECT_ROOT)
         if r.returncode == 0:
             print("[push] Success.", flush=True)
             return True
         jitter = random.randint(1, 15)
-        print(f"[push] Failed, pull --rebase and retry in {jitter}s (attempt {attempt}/{max_retries})", flush=True)
+        print(f"[push] Failed, pull --rebase and retry in {jitter}s (attempt {attempt}/{max_retries})",
+              flush=True)
         time.sleep(jitter)
         run(["git", "pull", "--rebase"], check=False)
     print("ERROR: push failed after retries", file=sys.stderr, flush=True)
     return False
+
+
+@git_locked
+def git_pull_safe():
+    """Pull latest state, handling concurrent local changes."""
+    run(["git", "add", "-A"], check=False)
+    run(["git", "stash"], check=False)
+    run(["git", "pull", "--rebase"], check=False)
+    run(["git", "stash", "pop"], check=False)
 
 
 def generate_pngs(tile_dir):
@@ -318,8 +351,8 @@ def main():
         print("No target_tiles.json or empty. Run generate_target_tiles.py.", file=sys.stderr)
         sys.exit(1)
 
-    # Pull latest tracking before claiming
-    run(["git", "pull", "--rebase"], check=False)
+    # Pull latest tracking before claiming (lock-protected for concurrent jobs)
+    git_pull_safe()
 
     processed = read_jsonl(PROCESSED_PATH)
     claimed = read_jsonl(CLAIMED_PATH)
