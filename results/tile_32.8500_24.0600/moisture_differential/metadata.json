@@ -1,0 +1,9 @@
+{
+  "scan_type": "moisture_differential",
+  "tile_id": "tile_32.8500_24.0600",
+  "percentile_threshold": 95,
+  "threshold_used": 2.30158106363504,
+  "num_candidates": 12500,
+  "candidate_count": 12500,
+  "run_time_utc": "2026-03-17T02:09:20.502100Z"
+}

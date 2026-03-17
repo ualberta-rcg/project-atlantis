@@ -1,0 +1,17 @@
+{
+  "stack_path": "/tmp/atlantis_1569/atlantis_slurm-1569/tile_32.8500_24.0600/stack.tif",
+  "tile_id": "tile_32.8500_24.0600",
+  "site_id": "tile_32.8500_24.0600",
+  "pathway": "temporal_variance_999",
+  "bbox": null,
+  "date_range": null,
+  "run_time_seconds": null,
+  "percentile_threshold": 99.9,
+  "candidate_count": 250,
+  "min_score": null,
+  "threshold_used": 9.579517987549067,
+  "num_candidates": 250,
+  "chance_meaning": "0-1: how far above variance threshold (higher = more anomalous, not InSAR displacement)",
+  "method": "temporal variance of backscatter (VV+VH over 2-5 dates); no InSAR/coherence/displacement",
+  "run_time_utc": "2026-03-17T02:08:59.878905Z"
+}

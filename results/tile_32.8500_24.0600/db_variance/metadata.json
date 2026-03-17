@@ -1,0 +1,9 @@
+{
+  "scan_type": "db_variance",
+  "tile_id": "tile_32.8500_24.0600",
+  "percentile_threshold": 99,
+  "threshold_used": 74.53424130663045,
+  "num_candidates": 2500,
+  "candidate_count": 2500,
+  "run_time_utc": "2026-03-17T02:09:19.317334Z"
+}

@@ -1,0 +1,9 @@
+{
+  "scan_type": "seasonal_difference",
+  "tile_id": "tile_32.8500_24.0600",
+  "percentile_threshold": 95,
+  "threshold_used": 0.06753699779510498,
+  "num_candidates": 12500,
+  "candidate_count": 12500,
+  "run_time_utc": "2026-03-17T02:09:03.405643Z"
+}

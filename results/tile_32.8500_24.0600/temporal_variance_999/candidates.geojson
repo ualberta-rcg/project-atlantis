@@ -1,0 +1,4505 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89344,
+          24.13864
+        ]
+      },
+      "properties": {
+        "lon": 32.89344,
+        "lat": 24.13864,
+        "score": 9.79499592105276,
+        "chance": 1.9277892210226807e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89392,
+          24.12616
+        ]
+      },
+      "properties": {
+        "lon": 32.89392,
+        "lat": 24.12616,
+        "score": 58.1466220729053,
+        "chance": 4.345091779452773e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89408,
+          24.12616
+        ]
+      },
+      "properties": {
+        "lon": 32.89408,
+        "lat": 24.12616,
+        "score": 19.583635054528713,
+        "chance": 8.950257102424805e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89392,
+          24.126
+        ]
+      },
+      "properties": {
+        "lon": 32.89392,
+        "lat": 24.126,
+        "score": 69.52821166813374,
+        "chance": 5.3633540851570045e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89408,
+          24.126
+        ]
+      },
+      "properties": {
+        "lon": 32.89408,
+        "lat": 24.126,
+        "score": 591.8867202848196,
+        "chance": 0.0005209654323575168,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89424,
+          24.126
+        ]
+      },
+      "properties": {
+        "lon": 32.89424,
+        "lat": 24.126,
+        "score": 14.404174151364714,
+        "chance": 4.316414213052157e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89392,
+          24.12584
+        ]
+      },
+      "properties": {
+        "lon": 32.89392,
+        "lat": 24.12584,
+        "score": 40.723799174651504,
+        "chance": 2.786346081603145e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89408,
+          24.12584
+        ]
+      },
+      "properties": {
+        "lon": 32.89408,
+        "lat": 24.12584,
+        "score": 83.03914986923337,
+        "chance": 6.572120134026559e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89408,
+          24.12568
+        ]
+      },
+      "properties": {
+        "lon": 32.89408,
+        "lat": 24.12568,
+        "score": 19.820547172799706,
+        "chance": 9.16221227598073e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89984,
+          24.12568
+        ]
+      },
+      "properties": {
+        "lon": 32.89984,
+        "lat": 24.12568,
+        "score": 12.599361180095002,
+        "chance": 2.701724979959038e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89408,
+          24.1252
+        ]
+      },
+      "properties": {
+        "lon": 32.89408,
+        "lat": 24.1252,
+        "score": 17.530201240442693,
+        "chance": 7.113137399023393e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.88304,
+          24.12488
+        ]
+      },
+      "properties": {
+        "lon": 32.88304,
+        "lat": 24.12488,
+        "score": 17.530573271156754,
+        "chance": 7.113470239045011e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92144,
+          24.122
+        ]
+      },
+      "properties": {
+        "lon": 32.92144,
+        "lat": 24.122,
+        "score": 9.72133280536218,
+        "chance": 1.2687567247192428e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90192,
+          24.11896
+        ]
+      },
+      "properties": {
+        "lon": 32.90192,
+        "lat": 24.11896,
+        "score": 12.606142638251185,
+        "chance": 2.7077920615036463e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.1156
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.1156,
+        "score": 37.57198986876756,
+        "chance": 2.5043671379681607e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89856,
+          24.1156
+        ]
+      },
+      "properties": {
+        "lon": 32.89856,
+        "lat": 24.1156,
+        "score": 14.00039113330422,
+        "chance": 3.955166758525363e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.11496
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.11496,
+        "score": 13.055577364284545,
+        "chance": 3.109882153195354e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89856,
+          24.11496
+        ]
+      },
+      "properties": {
+        "lon": 32.89856,
+        "lat": 24.11496,
+        "score": 17.61128207668662,
+        "chance": 7.185676967043646e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89776,
+          24.1148
+        ]
+      },
+      "properties": {
+        "lon": 32.89776,
+        "lat": 24.1148,
+        "score": 62.26599474794057,
+        "chance": 4.713634493371657e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.1148
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.1148,
+        "score": 1584.9609273719252,
+        "chance": 0.0014094265944678195,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.1148
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.1148,
+        "score": 1216.2113144574687,
+        "chance": 0.0010795220341845758,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.1148
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.1148,
+        "score": 67.27600061288103,
+        "chance": 5.161858362361339e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89776,
+          24.11464
+        ]
+      },
+      "properties": {
+        "lon": 32.89776,
+        "lat": 24.11464,
+        "score": 9.94520896387985,
+        "chance": 3.271681285098565e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11464
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11464,
+        "score": 1597.0082521861186,
+        "chance": 0.0014202048224475133,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.11464
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.11464,
+        "score": 14573.500764667988,
+        "chance": 0.013029719534920586,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.11464
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.11464,
+        "score": 615.7732737104525,
+        "chance": 0.0005423357135146491,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89776,
+          24.11448
+        ]
+      },
+      "properties": {
+        "lon": 32.89776,
+        "lat": 24.11448,
+        "score": 11446.088641104288,
+        "chance": 0.01023175721763372,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11448
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11448,
+        "score": 155936.87611183152,
+        "chance": 0.13950150567583222,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.11448
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.11448,
+        "score": 114451.16559794359,
+        "chance": 0.1023860088568644,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.11448
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.11448,
+        "score": 13047.767714793794,
+        "chance": 0.011664711211386085,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.11448
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.11448,
+        "score": 92.46968133297923,
+        "chance": 7.415829585324645e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89744,
+          24.11432
+        ]
+      },
+      "properties": {
+        "lon": 32.89744,
+        "lat": 24.11432,
+        "score": 10.728251057566013,
+        "chance": 1.0277225116292548e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89776,
+          24.11432
+        ]
+      },
+      "properties": {
+        "lon": 32.89776,
+        "lat": 24.11432,
+        "score": 16184.397567098029,
+        "chance": 0.014470920237660443,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11432
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11432,
+        "score": 238809.05306465924,
+        "chance": 0.21364370987030865,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.11432
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.11432,
+        "score": 34128.16312308796,
+        "chance": 0.030524442406232165,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.11432
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.11432,
+        "score": 33098.33690844104,
+        "chance": 0.029603100789556178,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.11432
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.11432,
+        "score": 89.20818227919517,
+        "chance": 7.124037167510648e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89776,
+          24.11416
+        ]
+      },
+      "properties": {
+        "lon": 32.89776,
+        "lat": 24.11416,
+        "score": 663.6518548151362,
+        "chance": 0.0005851706391474809,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11416
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11416,
+        "score": 533.6678461206611,
+        "chance": 0.0004688794872916767,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.11416
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.11416,
+        "score": 6030.957820757292,
+        "chance": 0.005387070499068277,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.11416
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.11416,
+        "score": 798.3095384361222,
+        "chance": 0.0007056431287390759,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.11416
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.11416,
+        "score": 229.63097980199382,
+        "chance": 0.00019687066292980855,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.114
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.114,
+        "score": 35.46669355013,
+        "chance": 2.3160152504158944e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.114
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.114,
+        "score": 61.477078920346685,
+        "chance": 4.643053557124483e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.11384
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.11384,
+        "score": 12.254867975250818,
+        "chance": 2.3935215940179908e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11368
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11368,
+        "score": 20.96468076109886,
+        "chance": 1.0185819827375463e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.88448,
+          24.11352
+        ]
+      },
+      "properties": {
+        "lon": 32.88448,
+        "lat": 24.11352,
+        "score": 31.730570131760032,
+        "chance": 1.981760213845264e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.88464,
+          24.11352
+        ]
+      },
+      "properties": {
+        "lon": 32.88464,
+        "lat": 24.11352,
+        "score": 16.719747932200335,
+        "chance": 6.388059370676225e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11352
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11352,
+        "score": 13.637758705765009,
+        "chance": 3.630734983245041e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.11352
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.11352,
+        "score": 12.083360304823145,
+        "chance": 2.2400809920050183e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89792,
+          24.11336
+        ]
+      },
+      "properties": {
+        "lon": 32.89792,
+        "lat": 24.11336,
+        "score": 15.030951799824834,
+        "chance": 4.877165457985857e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.11336
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.11336,
+        "score": 36.182178627699614,
+        "chance": 2.3800266504657114e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.11336
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.11336,
+        "score": 39.41853744164109,
+        "chance": 2.6695698781842578e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.11336
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.11336,
+        "score": 25.730663454160094,
+        "chance": 1.44497413871702e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.1132
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.1132,
+        "score": 14.428874172503129,
+        "chance": 4.338512269096886e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9016,
+          24.10888
+        ]
+      },
+      "properties": {
+        "lon": 32.9016,
+        "lat": 24.10888,
+        "score": 11.864595368504524,
+        "chance": 2.0443613285966417e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90624,
+          24.10856
+        ]
+      },
+      "properties": {
+        "lon": 32.90624,
+        "lat": 24.10856,
+        "score": 44.45395318797091,
+        "chance": 3.120067060949201e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90608,
+          24.1084
+        ]
+      },
+      "properties": {
+        "lon": 32.90608,
+        "lat": 24.1084,
+        "score": 12.452435365878046,
+        "chance": 2.5702767168669022e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90624,
+          24.1084
+        ]
+      },
+      "properties": {
+        "lon": 32.90624,
+        "lat": 24.1084,
+        "score": 65.34333376574796,
+        "chance": 4.9889508977709015e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90672,
+          24.1084
+        ]
+      },
+      "properties": {
+        "lon": 32.90672,
+        "lat": 24.1084,
+        "score": 29.57589606268448,
+        "chance": 1.7889907094398507e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90688,
+          24.1084
+        ]
+      },
+      "properties": {
+        "lon": 32.90688,
+        "lat": 24.1084,
+        "score": 20.09852328884881,
+        "chance": 9.41090565794693e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90672,
+          24.10824
+        ]
+      },
+      "properties": {
+        "lon": 32.90672,
+        "lat": 24.10824,
+        "score": 18.348817564547062,
+        "chance": 7.84551852970403e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90688,
+          24.10824
+        ]
+      },
+      "properties": {
+        "lon": 32.90688,
+        "lat": 24.10824,
+        "score": 9.81113855401054,
+        "chance": 2.0722104771064363e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.899680000000004,
+          24.10808
+        ]
+      },
+      "properties": {
+        "lon": 32.899680000000004,
+        "lat": 24.10808,
+        "score": 12.350339218974113,
+        "chance": 2.478935646201782e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89984,
+          24.10808
+        ]
+      },
+      "properties": {
+        "lon": 32.89984,
+        "lat": 24.10808,
+        "score": 147.52726014703512,
+        "chance": 0.00012341596472332822,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89984,
+          24.10792
+        ]
+      },
+      "properties": {
+        "lon": 32.89984,
+        "lat": 24.10792,
+        "score": 113.58478390425444,
+        "chance": 9.304907806737751e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90624,
+          24.10792
+        ]
+      },
+      "properties": {
+        "lon": 32.90624,
+        "lat": 24.10792,
+        "score": 15.10763930529356,
+        "chance": 4.945774500232494e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.899680000000004,
+          24.10776
+        ]
+      },
+      "properties": {
+        "lon": 32.899680000000004,
+        "lat": 24.10776,
+        "score": 25.991959303617477,
+        "chance": 1.4683511645633013e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89984,
+          24.10776
+        ]
+      },
+      "properties": {
+        "lon": 32.89984,
+        "lat": 24.10776,
+        "score": 27.786416221410036,
+        "chance": 1.6288935759119233e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9064,
+          24.10776
+        ]
+      },
+      "properties": {
+        "lon": 32.9064,
+        "lat": 24.10776,
+        "score": 20.02677983045578,
+        "chance": 9.346719843873025e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90656,
+          24.10776
+        ]
+      },
+      "properties": {
+        "lon": 32.90656,
+        "lat": 24.10776,
+        "score": 30.60829107835889,
+        "chance": 1.881354690785559e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90672,
+          24.10776
+        ]
+      },
+      "properties": {
+        "lon": 32.90672,
+        "lat": 24.10776,
+        "score": 20.96286691800924,
+        "chance": 1.01841970592804e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.899680000000004,
+          24.1076
+        ]
+      },
+      "properties": {
+        "lon": 32.899680000000004,
+        "lat": 24.1076,
+        "score": 38.968489872757345,
+        "chance": 2.6293060405775787e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89984,
+          24.1076
+        ]
+      },
+      "properties": {
+        "lon": 32.89984,
+        "lat": 24.1076,
+        "score": 20.253243966028094,
+        "chance": 9.549327652666146e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9064,
+          24.1076
+        ]
+      },
+      "properties": {
+        "lon": 32.9064,
+        "lat": 24.1076,
+        "score": 133.53009284846485,
+        "chance": 0.00011089329578721994,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90656,
+          24.1076
+        ]
+      },
+      "properties": {
+        "lon": 32.90656,
+        "lat": 24.1076,
+        "score": 414.5886700931005,
+        "chance": 0.0003623444243914839,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90672,
+          24.1076
+        ]
+      },
+      "properties": {
+        "lon": 32.90672,
+        "lat": 24.1076,
+        "score": 52.21550155291334,
+        "chance": 3.814459708636527e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90656,
+          24.10744
+        ]
+      },
+      "properties": {
+        "lon": 32.90656,
+        "lat": 24.10744,
+        "score": 43.78528054722119,
+        "chance": 3.060243770078073e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89088,
+          24.10664
+        ]
+      },
+      "properties": {
+        "lon": 32.89088,
+        "lat": 24.10664,
+        "score": 23.777991396818834,
+        "chance": 1.2702768932438465e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.899680000000004,
+          24.10664
+        ]
+      },
+      "properties": {
+        "lon": 32.899680000000004,
+        "lat": 24.10664,
+        "score": 11.836317324079573,
+        "chance": 2.0190621676349524e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89088,
+          24.10648
+        ]
+      },
+      "properties": {
+        "lon": 32.89088,
+        "lat": 24.10648,
+        "score": 24.19672242161323,
+        "chance": 1.3077389731413497e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.899680000000004,
+          24.10648
+        ]
+      },
+      "properties": {
+        "lon": 32.899680000000004,
+        "lat": 24.10648,
+        "score": 39.911917018704116,
+        "chance": 2.7137104458548925e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.899680000000004,
+          24.10632
+        ]
+      },
+      "properties": {
+        "lon": 32.899680000000004,
+        "lat": 24.10632,
+        "score": 14.24214687757194,
+        "chance": 4.1714553177952346e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89936,
+          24.105999999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.89936,
+        "lat": 24.105999999999998,
+        "score": 12.868101237341762,
+        "chance": 2.9421552538127846e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92336,
+          24.10552
+        ]
+      },
+      "properties": {
+        "lon": 32.92336,
+        "lat": 24.10552,
+        "score": 35.398388819769025,
+        "chance": 2.309904317347544e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92336,
+          24.10536
+        ]
+      },
+      "properties": {
+        "lon": 32.92336,
+        "lat": 24.10536,
+        "score": 19.39120195992291,
+        "chance": 8.778095415370781e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8992,
+          24.1044
+        ]
+      },
+      "properties": {
+        "lon": 32.8992,
+        "lat": 24.1044,
+        "score": 20.094488380942494,
+        "chance": 9.407295797835903e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89904,
+          24.10424
+        ]
+      },
+      "properties": {
+        "lon": 32.89904,
+        "lat": 24.10424,
+        "score": 30.308944705873728,
+        "chance": 1.8545734468388675e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8992,
+          24.10424
+        ]
+      },
+      "properties": {
+        "lon": 32.8992,
+        "lat": 24.10424,
+        "score": 126.36764422059059,
+        "chance": 0.00010448535830776193,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89936,
+          24.10424
+        ]
+      },
+      "properties": {
+        "lon": 32.89936,
+        "lat": 24.10424,
+        "score": 23.808831626549363,
+        "chance": 1.2730360371376856e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8992,
+          24.10408
+        ]
+      },
+      "properties": {
+        "lon": 32.8992,
+        "lat": 24.10408,
+        "score": 30.873269990086555,
+        "chance": 1.9050612245136708e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89936,
+          24.10408
+        ]
+      },
+      "properties": {
+        "lon": 32.89936,
+        "lat": 24.10408,
+        "score": 464.53888630121946,
+        "chance": 0.00040703275364544633,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89952,
+          24.10408
+        ]
+      },
+      "properties": {
+        "lon": 32.89952,
+        "lat": 24.10408,
+        "score": 36.321138855302706,
+        "chance": 2.3924588296948442e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8992,
+          24.10392
+        ]
+      },
+      "properties": {
+        "lon": 32.8992,
+        "lat": 24.10392,
+        "score": 26.526780840707943,
+        "chance": 1.5161993677463022e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89936,
+          24.10392
+        ]
+      },
+      "properties": {
+        "lon": 32.89936,
+        "lat": 24.10392,
+        "score": 40.71846602484584,
+        "chance": 2.785868947423218e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89952,
+          24.10392
+        ]
+      },
+      "properties": {
+        "lon": 32.89952,
+        "lat": 24.10392,
+        "score": 19.00884511694312,
+        "chance": 8.436017046372467e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89936,
+          24.10376
+        ]
+      },
+      "properties": {
+        "lon": 32.89936,
+        "lat": 24.10376,
+        "score": 28.127012692391872,
+        "chance": 1.6593652903376558e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89952,
+          24.10376
+        ]
+      },
+      "properties": {
+        "lon": 32.89952,
+        "lat": 24.10376,
+        "score": 53.53255686699413,
+        "chance": 3.932291033482237e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90192,
+          24.1036
+        ]
+      },
+      "properties": {
+        "lon": 32.90192,
+        "lat": 24.1036,
+        "score": 76.65007265741588,
+        "chance": 6.000516630087611e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90688,
+          24.1036
+        ]
+      },
+      "properties": {
+        "lon": 32.90688,
+        "lat": 24.1036,
+        "score": 29.934935346245766,
+        "chance": 1.8211124236923824e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90192,
+          24.10344
+        ]
+      },
+      "properties": {
+        "lon": 32.90192,
+        "lat": 24.10344,
+        "score": 18.974957599071786,
+        "chance": 8.405699328628784e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90208,
+          24.10344
+        ]
+      },
+      "properties": {
+        "lon": 32.90208,
+        "lat": 24.10344,
+        "score": 22.99077838868834,
+        "chance": 1.1998483009955919e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9272,
+          24.10184
+        ]
+      },
+      "properties": {
+        "lon": 32.9272,
+        "lat": 24.10184,
+        "score": 13.354387725004926,
+        "chance": 3.37721504578446e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89872,
+          24.10136
+        ]
+      },
+      "properties": {
+        "lon": 32.89872,
+        "lat": 24.10136,
+        "score": 12.160965312505141,
+        "chance": 2.3095108843722428e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8992,
+          24.10136
+        ]
+      },
+      "properties": {
+        "lon": 32.8992,
+        "lat": 24.10136,
+        "score": 48.79738646233454,
+        "chance": 3.5086555216050106e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90064,
+          24.09944
+        ]
+      },
+      "properties": {
+        "lon": 32.90064,
+        "lat": 24.09944,
+        "score": 25.73744773864746,
+        "chance": 1.4455810997312842e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.900800000000004,
+          24.09944
+        ]
+      },
+      "properties": {
+        "lon": 32.900800000000004,
+        "lat": 24.09944,
+        "score": 22.462796688079834,
+        "chance": 1.1526120288270145e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90128,
+          24.09912
+        ]
+      },
+      "properties": {
+        "lon": 32.90128,
+        "lat": 24.09912,
+        "score": 16.20408130902797,
+        "chance": 5.926714423827727e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90128,
+          24.098959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90128,
+        "lat": 24.098959999999998,
+        "score": 12.890601772814989,
+        "chance": 2.962285523788565e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.09864
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.09864,
+        "score": 16.56556630693376,
+        "chance": 6.250119642725582e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89808,
+          24.09848
+        ]
+      },
+      "properties": {
+        "lon": 32.89808,
+        "lat": 24.09848,
+        "score": 21.681035108864307,
+        "chance": 1.082671152686417e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.09848
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.09848,
+        "score": 12.772788636852056,
+        "chance": 2.856883132967729e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89872,
+          24.09816
+        ]
+      },
+      "properties": {
+        "lon": 32.89872,
+        "lat": 24.09816,
+        "score": 17.075931603161735,
+        "chance": 6.706721718332307e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90928,
+          24.0972
+        ]
+      },
+      "properties": {
+        "lon": 32.90928,
+        "lat": 24.0972,
+        "score": 16.840255173985497,
+        "chance": 6.495872063136741e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89728,
+          24.09656
+        ]
+      },
+      "properties": {
+        "lon": 32.89728,
+        "lat": 24.09656,
+        "score": 9.940474065952003,
+        "chance": 3.2293201716447406e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90912,
+          24.096239999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90912,
+        "lat": 24.096239999999998,
+        "score": 86.65177734289318,
+        "chance": 6.89532651484014e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91968,
+          24.096239999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91968,
+        "lat": 24.096239999999998,
+        "score": 10.830741327488795,
+        "chance": 1.1194161873593774e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90912,
+          24.09608
+        ]
+      },
+      "properties": {
+        "lon": 32.90912,
+        "lat": 24.09608,
+        "score": 132.96778145618737,
+        "chance": 0.00011039021975374192,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91952,
+          24.09608
+        ]
+      },
+      "properties": {
+        "lon": 32.91952,
+        "lat": 24.09608,
+        "score": 16.98467783560045,
+        "chance": 6.625080862295724e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91968,
+          24.09608
+        ]
+      },
+      "properties": {
+        "lon": 32.91968,
+        "lat": 24.09608,
+        "score": 10.570730512728915,
+        "chance": 8.867955946642866e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9048,
+          24.09496
+        ]
+      },
+      "properties": {
+        "lon": 32.9048,
+        "lat": 24.09496,
+        "score": 33.44578851759434,
+        "chance": 2.1352134915032588e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90496,
+          24.09496
+        ]
+      },
+      "properties": {
+        "lon": 32.90496,
+        "lat": 24.09496,
+        "score": 21.530020594596863,
+        "chance": 1.0691605278122572e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91712,
+          24.09448
+        ]
+      },
+      "properties": {
+        "lon": 32.91712,
+        "lat": 24.09448,
+        "score": 16.4792306041345,
+        "chance": 6.1728787695932155e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91728,
+          24.09448
+        ]
+      },
+      "properties": {
+        "lon": 32.91728,
+        "lat": 24.09448,
+        "score": 23.266372648009565,
+        "chance": 1.2245045446237165e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9096,
+          24.09272
+        ]
+      },
+      "properties": {
+        "lon": 32.9096,
+        "lat": 24.09272,
+        "score": 11.392887644469738,
+        "chance": 1.6223445350061181e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89712,
+          24.09256
+        ]
+      },
+      "properties": {
+        "lon": 32.89712,
+        "lat": 24.09256,
+        "score": 12.876594752073288,
+        "chance": 2.9497540393969022e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.908,
+          24.08744
+        ]
+      },
+      "properties": {
+        "lon": 32.908,
+        "lat": 24.08744,
+        "score": 10.317561395466328,
+        "chance": 6.602959770845218e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90816,
+          24.08744
+        ]
+      },
+      "properties": {
+        "lon": 32.90816,
+        "lat": 24.08744,
+        "score": 10.215266258921474,
+        "chance": 5.687768788698395e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.908,
+          24.08728
+        ]
+      },
+      "properties": {
+        "lon": 32.908,
+        "lat": 24.08728,
+        "score": 50.05351037532091,
+        "chance": 3.621035573722155e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90816,
+          24.08728
+        ]
+      },
+      "properties": {
+        "lon": 32.90816,
+        "lat": 24.08728,
+        "score": 46.13719678670168,
+        "chance": 3.2706596907013795e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90784,
+          24.08712
+        ]
+      },
+      "properties": {
+        "lon": 32.90784,
+        "lat": 24.08712,
+        "score": 740.0064604133368,
+        "chance": 0.000653481850070212,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.908,
+          24.08712
+        ]
+      },
+      "properties": {
+        "lon": 32.908,
+        "lat": 24.08712,
+        "score": 76000.20826292038,
+        "chance": 0.06798557634705911,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90816,
+          24.08712
+        ]
+      },
+      "properties": {
+        "lon": 32.90816,
+        "lat": 24.08712,
+        "score": 45526.577043533325,
+        "chance": 0.040722117469889185,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90736,
+          24.086959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90736,
+        "lat": 24.086959999999998,
+        "score": 10.145556321367621,
+        "chance": 5.064103692094993e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90784,
+          24.086959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90784,
+        "lat": 24.086959999999998,
+        "score": 2324.3176991045475,
+        "chance": 0.0020708975821742493,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.908,
+          24.086959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.908,
+        "lat": 24.086959999999998,
+        "score": 88773.4352657795,
+        "chance": 0.07941323807250707,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90816,
+          24.086959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90816,
+        "lat": 24.086959999999998,
+        "score": 11681.76225681603,
+        "chance": 0.010442604355742529,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.908,
+          24.0868
+        ]
+      },
+      "properties": {
+        "lon": 32.908,
+        "lat": 24.0868,
+        "score": 31.31178657989949,
+        "chance": 1.9442934345750558e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90704,
+          24.086479999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90704,
+        "lat": 24.086479999999998,
+        "score": 13.128585213795304,
+        "chance": 3.1751991641061146e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90736,
+          24.086479999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90736,
+        "lat": 24.086479999999998,
+        "score": 14.833099259063601,
+        "chance": 4.700155223466915e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90736,
+          24.08632
+        ]
+      },
+      "properties": {
+        "lon": 32.90736,
+        "lat": 24.08632,
+        "score": 14.552031045779586,
+        "chance": 4.448695473908966e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92496,
+          24.08632
+        ]
+      },
+      "properties": {
+        "lon": 32.92496,
+        "lat": 24.08632,
+        "score": 14.560083177872002,
+        "chance": 4.455899373260332e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92512,
+          24.08632
+        ]
+      },
+      "properties": {
+        "lon": 32.92512,
+        "lat": 24.08632,
+        "score": 16.65033473231597,
+        "chance": 6.325958339559978e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92496,
+          24.08616
+        ]
+      },
+      "properties": {
+        "lon": 32.92496,
+        "lat": 24.08616,
+        "score": 11.040515810251236,
+        "chance": 1.3070924751998272e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90144,
+          24.08552
+        ]
+      },
+      "properties": {
+        "lon": 32.90144,
+        "lat": 24.08552,
+        "score": 16.05799724906683,
+        "chance": 5.796019242387493e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90816,
+          24.085359999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90816,
+        "lat": 24.085359999999998,
+        "score": 10.73417603969574,
+        "chance": 1.0330233405813033e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90816,
+          24.0852
+        ]
+      },
+      "properties": {
+        "lon": 32.90816,
+        "lat": 24.0852,
+        "score": 26.405062675476074,
+        "chance": 1.505309762341179e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90848,
+          24.08456
+        ]
+      },
+      "properties": {
+        "lon": 32.90848,
+        "lat": 24.08456,
+        "score": 16.36224840360228,
+        "chance": 6.068219781282626e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90912,
+          24.08408
+        ]
+      },
+      "properties": {
+        "lon": 32.90912,
+        "lat": 24.08408,
+        "score": 131.39915226231096,
+        "chance": 0.00010898683407866784,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89024,
+          24.08392
+        ]
+      },
+      "properties": {
+        "lon": 32.89024,
+        "lat": 24.08392,
+        "score": 41.078089505434036,
+        "chance": 2.818042927293538e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8904,
+          24.08392
+        ]
+      },
+      "properties": {
+        "lon": 32.8904,
+        "lat": 24.08392,
+        "score": 111.4667900800705,
+        "chance": 9.115419927488879e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90896,
+          24.08392
+        ]
+      },
+      "properties": {
+        "lon": 32.90896,
+        "lat": 24.08392,
+        "score": 10.913275388767943,
+        "chance": 1.1932558938731957e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90912,
+          24.08392
+        ]
+      },
+      "properties": {
+        "lon": 32.90912,
+        "lat": 24.08392,
+        "score": 1144.1005304239225,
+        "chance": 0.0010150075895177938,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89024,
+          24.083759999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.89024,
+        "lat": 24.083759999999998,
+        "score": 16.16769687831402,
+        "chance": 5.894162824597637e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8904,
+          24.083759999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.8904,
+        "lat": 24.083759999999998,
+        "score": 15.83799035847187,
+        "chance": 5.599188455427857e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90912,
+          24.083759999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90912,
+        "lat": 24.083759999999998,
+        "score": 111.74714739527553,
+        "chance": 9.140502301423835e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90928,
+          24.083759999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.90928,
+        "lat": 24.083759999999998,
+        "score": 24.783232685615076,
+        "chance": 1.3602115463917586e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90912,
+          24.0836
+        ]
+      },
+      "properties": {
+        "lon": 32.90912,
+        "lat": 24.0836,
+        "score": 45.91243139375001,
+        "chance": 3.250550889083244e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90928,
+          24.0836
+        ]
+      },
+      "properties": {
+        "lon": 32.90928,
+        "lat": 24.0836,
+        "score": 15.853146078297868,
+        "chance": 5.612747631925574e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90928,
+          24.08344
+        ]
+      },
+      "properties": {
+        "lon": 32.90928,
+        "lat": 24.08344,
+        "score": 104.34160021319985,
+        "chance": 8.477959562070167e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90928,
+          24.08328
+        ]
+      },
+      "properties": {
+        "lon": 32.90928,
+        "lat": 24.08328,
+        "score": 117.38053232943639,
+        "chance": 9.644497238509158e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.909440000000004,
+          24.08328
+        ]
+      },
+      "properties": {
+        "lon": 32.909440000000004,
+        "lat": 24.08328,
+        "score": 9.988512428419199,
+        "chance": 3.659098923714747e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89744,
+          24.08312
+        ]
+      },
+      "properties": {
+        "lon": 32.89744,
+        "lat": 24.08312,
+        "score": 13.808302576420829,
+        "chance": 3.7833133146852497e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8976,
+          24.08312
+        ]
+      },
+      "properties": {
+        "lon": 32.8976,
+        "lat": 24.08312,
+        "score": 12.7448089379468,
+        "chance": 2.8318508890251785e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91696,
+          24.08248
+        ]
+      },
+      "properties": {
+        "lon": 32.91696,
+        "lat": 24.08248,
+        "score": 14.529556768131442,
+        "chance": 4.428588695690016e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.896,
+          24.08168
+        ]
+      },
+      "properties": {
+        "lon": 32.896,
+        "lat": 24.08168,
+        "score": 13.701422462705523,
+        "chance": 3.687692232836275e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91024,
+          24.0812
+        ]
+      },
+      "properties": {
+        "lon": 32.91024,
+        "lat": 24.0812,
+        "score": 21.77036327176029,
+        "chance": 1.0906629626487898e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9104,
+          24.0812
+        ]
+      },
+      "properties": {
+        "lon": 32.9104,
+        "lat": 24.0812,
+        "score": 18.611795695032924,
+        "chance": 8.080793853293791e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91536,
+          24.0804
+        ]
+      },
+      "properties": {
+        "lon": 32.91536,
+        "lat": 24.0804,
+        "score": 10.001116557774367,
+        "chance": 3.7718626963952197e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91536,
+          24.08024
+        ]
+      },
+      "properties": {
+        "lon": 32.91536,
+        "lat": 24.08024,
+        "score": 36.09137718309648,
+        "chance": 2.3719030322690388e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91728,
+          24.07848
+        ]
+      },
+      "properties": {
+        "lon": 32.91728,
+        "lat": 24.07848,
+        "score": 69.3026728220284,
+        "chance": 5.343176085982147e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91744,
+          24.07848
+        ]
+      },
+      "properties": {
+        "lon": 32.91744,
+        "lat": 24.07848,
+        "score": 26.754795510321856,
+        "chance": 1.53659886829698e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.88176,
+          24.07656
+        ]
+      },
+      "properties": {
+        "lon": 32.88176,
+        "lat": 24.07656,
+        "score": 12.064443880692124,
+        "chance": 2.2231572736700963e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89296,
+          24.076079999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.89296,
+        "lat": 24.076079999999997,
+        "score": 34.09153938293457,
+        "chance": 2.192986068835296e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89312,
+          24.076079999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.89312,
+        "lat": 24.076079999999997,
+        "score": 56.824074029922485,
+        "chance": 4.226769043565609e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89296,
+          24.07592
+        ]
+      },
+      "properties": {
+        "lon": 32.89296,
+        "lat": 24.07592,
+        "score": 37.16410970687866,
+        "chance": 2.4678758385217174e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89312,
+          24.07592
+        ]
+      },
+      "properties": {
+        "lon": 32.89312,
+        "lat": 24.07592,
+        "score": 69.40528082847595,
+        "chance": 5.352355986940164e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89824,
+          24.07592
+        ]
+      },
+      "properties": {
+        "lon": 32.89824,
+        "lat": 24.07592,
+        "score": 11.389162452192977,
+        "chance": 1.6190117642668564e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8984,
+          24.07592
+        ]
+      },
+      "properties": {
+        "lon": 32.8984,
+        "lat": 24.07592,
+        "score": 25.34792887372896,
+        "chance": 1.4107325072575678e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.89856,
+          24.07592
+        ]
+      },
+      "properties": {
+        "lon": 32.89856,
+        "lat": 24.07592,
+        "score": 11.891690105665475,
+        "chance": 2.0686018349891114e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.92384,
+          24.0748
+        ]
+      },
+      "properties": {
+        "lon": 32.92384,
+        "lat": 24.0748,
+        "score": 24.81750566000119,
+        "chance": 1.36327780331745e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8904,
+          24.07352
+        ]
+      },
+      "properties": {
+        "lon": 32.8904,
+        "lat": 24.07352,
+        "score": 10.866232614265755,
+        "chance": 1.151168728780365e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90656,
+          24.0732
+        ]
+      },
+      "properties": {
+        "lon": 32.90656,
+        "lat": 24.0732,
+        "score": 55.64304327289574,
+        "chance": 4.121107256018653e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.90032,
+          24.0724
+        ]
+      },
+      "properties": {
+        "lon": 32.90032,
+        "lat": 24.0724,
+        "score": 9.655264280518168,
+        "chance": 6.7766979543525e-08,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91776,
+          24.07096
+        ]
+      },
+      "properties": {
+        "lon": 32.91776,
+        "lat": 24.07096,
+        "score": 45.52525864361087,
+        "chance": 3.215912193498243e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91776,
+          24.0708
+        ]
+      },
+      "properties": {
+        "lon": 32.91776,
+        "lat": 24.0708,
+        "score": 19.287675166444387,
+        "chance": 8.685474406198388e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9176,
+          24.068559999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.9176,
+        "lat": 24.068559999999998,
+        "score": 10.281126630492508,
+        "chance": 6.276993459376856e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.06824
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.06824,
+        "score": 54.690465092659,
+        "chance": 4.035884146710789e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91824,
+          24.06824
+        ]
+      },
+      "properties": {
+        "lon": 32.91824,
+        "lat": 24.06824,
+        "score": 30.32045271061361,
+        "chance": 1.855603018968704e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9176,
+          24.06808
+        ]
+      },
+      "properties": {
+        "lon": 32.9176,
+        "lat": 24.06808,
+        "score": 9.825864039361477,
+        "chance": 2.2039531176277993e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9176,
+          24.067919999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.9176,
+        "lat": 24.067919999999997,
+        "score": 10.387234883382916,
+        "chance": 7.226298768081111e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91776,
+          24.067919999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.91776,
+        "lat": 24.067919999999997,
+        "score": 11.221753378515132,
+        "chance": 1.469238002058388e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.06776
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.06776,
+        "score": 30.119327653199434,
+        "chance": 1.837609217401363e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91824,
+          24.06776
+        ]
+      },
+      "properties": {
+        "lon": 32.91824,
+        "lat": 24.06776,
+        "score": 12.610105169005692,
+        "chance": 2.7113371688621118e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.0676
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.0676,
+        "score": 18.56357853114605,
+        "chance": 8.037656012078226e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.067439999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.067439999999998,
+        "score": 36.15258366987109,
+        "chance": 2.3773789157408252e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91792,
+          24.06712
+        ]
+      },
+      "properties": {
+        "lon": 32.91792,
+        "lat": 24.06712,
+        "score": 61.83264731685631,
+        "chance": 4.674864745907572e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.06712
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.06712,
+        "score": 47.10949874552898,
+        "chance": 3.3576474024047863e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91792,
+          24.066959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91792,
+        "lat": 24.066959999999998,
+        "score": 18.85398519039154,
+        "chance": 8.29747047117553e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.066959999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.066959999999998,
+        "score": 44.163383642211556,
+        "chance": 3.0940710422773986e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91808,
+          24.0668
+        ]
+      },
+      "properties": {
+        "lon": 32.91808,
+        "lat": 24.0668,
+        "score": 10.300369032425806,
+        "chance": 6.449147027171125e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91776,
+          24.06648
+        ]
+      },
+      "properties": {
+        "lon": 32.91776,
+        "lat": 24.06648,
+        "score": 10.276191153447144,
+        "chance": 6.232837850057836e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.87568,
+          24.066
+        ]
+      },
+      "properties": {
+        "lon": 32.87568,
+        "lat": 24.066,
+        "score": 9.975630412285682,
+        "chance": 3.543849016480933e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91456,
+          24.066
+        ]
+      },
+      "properties": {
+        "lon": 32.91456,
+        "lat": 24.066,
+        "score": 15.890522235480603,
+        "chance": 5.646186486553763e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.87568,
+          24.065839999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.87568,
+        "lat": 24.065839999999998,
+        "score": 86200.04290163331,
+        "chance": 0.07711093361821914,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.875840000000004,
+          24.065839999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.875840000000004,
+        "lat": 24.065839999999998,
+        "score": 10537.889460530598,
+        "chance": 0.009419230123845905,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.876,
+          24.065839999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.876,
+        "lat": 24.065839999999998,
+        "score": 28.44859422175523,
+        "chance": 1.6881358189902357e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8752,
+          24.06568
+        ]
+      },
+      "properties": {
+        "lon": 32.8752,
+        "lat": 24.06568,
+        "score": 15.75222497384675,
+        "chance": 5.522457821655403e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.87536,
+          24.06568
+        ]
+      },
+      "properties": {
+        "lon": 32.87536,
+        "lat": 24.06568,
+        "score": 51.96559476434777,
+        "chance": 3.792101613521008e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.87568,
+          24.06568
+        ]
+      },
+      "properties": {
+        "lon": 32.87568,
+        "lat": 24.06568,
+        "score": 1117755.9137846678,
+        "chance": 1.0,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.875840000000004,
+          24.06568
+        ]
+      },
+      "properties": {
+        "lon": 32.875840000000004,
+        "lat": 24.06568,
+        "score": 140784.86066493578,
+        "chance": 0.12594564332819455,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.876,
+          24.06568
+        ]
+      },
+      "properties": {
+        "lon": 32.876,
+        "lat": 24.06568,
+        "score": 33.44863093087406,
+        "chance": 2.1354677901032705e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.87568,
+          24.06552
+        ]
+      },
+      "properties": {
+        "lon": 32.87568,
+        "lat": 24.06552,
+        "score": 152890.04836187325,
+        "chance": 0.13677563876260526,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.875840000000004,
+          24.06552
+        ]
+      },
+      "properties": {
+        "lon": 32.875840000000004,
+        "lat": 24.06552,
+        "score": 78.13873975397291,
+        "chance": 6.133701329595815e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.875840000000004,
+          24.065199999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.875840000000004,
+        "lat": 24.065199999999997,
+        "score": 20.372408056032327,
+        "chance": 9.655938684481708e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91648,
+          24.064719999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91648,
+        "lat": 24.064719999999998,
+        "score": 32.75656257523224,
+        "chance": 2.0735513843477673e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91664,
+          24.064719999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91664,
+        "lat": 24.064719999999998,
+        "score": 22.024183916510083,
+        "chance": 1.1133712137938332e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91136,
+          24.06408
+        ]
+      },
+      "properties": {
+        "lon": 32.91136,
+        "lat": 24.06408,
+        "score": 13.386063694953918,
+        "chance": 3.4055541858718876e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9112,
+          24.06392
+        ]
+      },
+      "properties": {
+        "lon": 32.9112,
+        "lat": 24.06392,
+        "score": 13.534138679504395,
+        "chance": 3.538030562676669e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91136,
+          24.06392
+        ]
+      },
+      "properties": {
+        "lon": 32.91136,
+        "lat": 24.06392,
+        "score": 14.178011655807495,
+        "chance": 4.114076268722778e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8864,
+          24.06376
+        ]
+      },
+      "properties": {
+        "lon": 32.8864,
+        "lat": 24.06376,
+        "score": 45.791853334521875,
+        "chance": 3.239763284102437e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8864,
+          24.063599999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.8864,
+        "lat": 24.063599999999997,
+        "score": 16.116729189816397,
+        "chance": 5.848564206257225e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.86464,
+          24.06296
+        ]
+      },
+      "properties": {
+        "lon": 32.86464,
+        "lat": 24.06296,
+        "score": 23.227649182459572,
+        "chance": 1.2210401212243414e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.86464,
+          24.0628
+        ]
+      },
+      "properties": {
+        "lon": 32.86464,
+        "lat": 24.0628,
+        "score": 27.136982202762738,
+        "chance": 1.5707914825533822e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91344,
+          24.062479999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.91344,
+        "lat": 24.062479999999997,
+        "score": 46.639852902852,
+        "chance": 3.315630190781802e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9136,
+          24.062479999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.9136,
+        "lat": 24.062479999999997,
+        "score": 374.65019039809704,
+        "chance": 0.00032661316903361605,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91344,
+          24.06232
+        ]
+      },
+      "properties": {
+        "lon": 32.91344,
+        "lat": 24.06232,
+        "score": 57.51437176577747,
+        "chance": 4.2885270395162614e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9136,
+          24.06232
+        ]
+      },
+      "properties": {
+        "lon": 32.9136,
+        "lat": 24.06232,
+        "score": 62.00740953348577,
+        "chance": 4.690499976484652e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91216,
+          24.06168
+        ]
+      },
+      "properties": {
+        "lon": 32.91216,
+        "lat": 24.06168,
+        "score": 35.417982559418306,
+        "chance": 2.3116572857133166e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91152,
+          24.06136
+        ]
+      },
+      "properties": {
+        "lon": 32.91152,
+        "lat": 24.06136,
+        "score": 16.502380512887612,
+        "chance": 6.1935900061622e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91088,
+          24.0612
+        ]
+      },
+      "properties": {
+        "lon": 32.91088,
+        "lat": 24.0612,
+        "score": 16.88079258799553,
+        "chance": 6.532139159495977e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.87536,
+          24.06104
+        ]
+      },
+      "properties": {
+        "lon": 32.87536,
+        "lat": 24.06104,
+        "score": 10.406005054152047,
+        "chance": 7.394227484943733e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9104,
+          24.06104
+        ]
+      },
+      "properties": {
+        "lon": 32.9104,
+        "lat": 24.06104,
+        "score": 25.42184927687049,
+        "chance": 1.4173458506321202e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91168,
+          24.06104
+        ]
+      },
+      "properties": {
+        "lon": 32.91168,
+        "lat": 24.06104,
+        "score": 9.603492622394697,
+        "chance": 2.1449083849027672e-08,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91216,
+          24.060879999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.91216,
+        "lat": 24.060879999999997,
+        "score": 17.031666728667915,
+        "chance": 6.667119821965668e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91232,
+          24.060879999999997
+        ]
+      },
+      "properties": {
+        "lon": 32.91232,
+        "lat": 24.060879999999997,
+        "score": 15.074637135956436,
+        "chance": 4.9162488660833324e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91072,
+          24.06072
+        ]
+      },
+      "properties": {
+        "lon": 32.91072,
+        "lat": 24.06072,
+        "score": 14.014600577880628,
+        "chance": 3.967879342893381e-06,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91168,
+          24.06072
+        ]
+      },
+      "properties": {
+        "lon": 32.91168,
+        "lat": 24.06072,
+        "score": 10.526501286774874,
+        "chance": 8.472255915266262e-07,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91136,
+          24.06056
+        ]
+      },
+      "properties": {
+        "lon": 32.91136,
+        "lat": 24.06056,
+        "score": 61.69780310243368,
+        "chance": 4.662800808832699e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91152,
+          24.06056
+        ]
+      },
+      "properties": {
+        "lon": 32.91152,
+        "lat": 24.06056,
+        "score": 138.36157857999206,
+        "chance": 0.00011521582012338515,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91168,
+          24.06056
+        ]
+      },
+      "properties": {
+        "lon": 32.91168,
+        "lat": 24.06056,
+        "score": 88.47139988467097,
+        "chance": 7.058120387295253e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91184,
+          24.06056
+        ]
+      },
+      "properties": {
+        "lon": 32.91184,
+        "lat": 24.06056,
+        "score": 107.10808655712754,
+        "chance": 8.72546530278393e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91072,
+          24.060399999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91072,
+        "lat": 24.060399999999998,
+        "score": 21.19328229036182,
+        "chance": 1.0390339871194653e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91152,
+          24.060399999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91152,
+        "lat": 24.060399999999998,
+        "score": 22.00470695644617,
+        "chance": 1.1116286931997764e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91168,
+          24.060399999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91168,
+        "lat": 24.060399999999998,
+        "score": 38.61332217231393,
+        "chance": 2.5975307003635192e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91184,
+          24.060399999999998
+        ]
+      },
+      "properties": {
+        "lon": 32.91184,
+        "lat": 24.060399999999998,
+        "score": 129.79237722139806,
+        "chance": 0.00010754932094026237,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91168,
+          24.06024
+        ]
+      },
+      "properties": {
+        "lon": 32.91168,
+        "lat": 24.06024,
+        "score": 27.506391681730747,
+        "chance": 1.6038409739847602e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91152,
+          24.06008
+        ]
+      },
+      "properties": {
+        "lon": 32.91152,
+        "lat": 24.06008,
+        "score": 37.68672263529152,
+        "chance": 2.5146317895269807e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91168,
+          24.06008
+        ]
+      },
+      "properties": {
+        "lon": 32.91168,
+        "lat": 24.06008,
+        "score": 196.4021196141839,
+        "chance": 0.00016714221813950614,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.91184,
+          24.06008
+        ]
+      },
+      "properties": {
+        "lon": 32.91184,
+        "lat": 24.06008,
+        "score": 71.21427935734391,
+        "chance": 5.514199374246354e-05,
+        "tile_id": "tile_32.8500_24.0600",
+        "pathway": "temporal_variance_999"
+      }
+    }
+  ]
+}
