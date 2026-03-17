@@ -6,47 +6,53 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=8G
-#SBATCH --time=01:00:00
-#SBATCH --output=logs/atlantis_%j.out
-#SBATCH --error=logs/atlantis_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --output=logs/atlantis_%A_%a.out
+#SBATCH --error=logs/atlantis_%A_%a.err
 
 # Archaeology radar pipeline — Slurm job wrapper.
 #
-# Processes a single tile: fetch S1 imagery, build stack, run all scan types,
-# generate PNGs, copy to repo, push.
+# Two modes:
+#   1. Single tile:  TILE_ID=tile_31.85_30.94 sbatch submit_tile_job.sh
+#   2. Batch (auto):  sbatch --array=1-100 submit_tile_job.sh
+#      Each array task picks unclaimed tiles from target_tiles.json.
 #
 # Required env: CDSE_CLIENT_ID, CDSE_CLIENT_SECRET, GIT_SSH_COMMAND
-# Pass TILE_ID as env var or first argument.
 #
-# Usage:
-#   TILE_ID=tile_31.8500_30.9400 sbatch scripts/submit_tile_job.sh
-#   sbatch --export=ALL,TILE_ID=tile_31.8500_30.9400 scripts/submit_tile_job.sh
+# Optional env:
+#   TILE_ID       — process this specific tile (single mode)
+#   BATCH_SIZE    — tiles per job in batch mode (default: 3)
+#   PROJECT_ROOT  — path to repo (default: ~/project-atlantis)
+#   VENV          — path to venv (default: ~/venv_cdse)
 
 set -euo pipefail
 
 TILE_ID="${TILE_ID:-${1:-}}"
-if [[ -z "$TILE_ID" ]]; then
-    echo "ERROR: TILE_ID not set. Pass as env var or argument." >&2
-    exit 1
-fi
-
+BATCH_SIZE="${BATCH_SIZE:-3}"
 PROJECT_ROOT="${PROJECT_ROOT:-${HOME}/project-atlantis}"
 VENV="${VENV:-${HOME}/venv_cdse}"
-WORKDIR="/tmp/atlantis_${SLURM_JOB_ID:-$$}"
+JOB_ID="${SLURM_ARRAY_JOB_ID:-${SLURM_JOB_ID:-$$}}_${SLURM_ARRAY_TASK_ID:-0}"
+WORKDIR="/tmp/atlantis_${JOB_ID}"
 
 echo "=============================================="
 echo "Atlantis pipeline — $(date)"
-echo "  Tile:     $TILE_ID"
-echo "  Job ID:   ${SLURM_JOB_ID:-local}"
+echo "  Tile:     ${TILE_ID:-AUTO (batch mode)}"
+echo "  Job ID:   ${JOB_ID}"
 echo "  Node:     $(hostname)"
 echo "  Project:  $PROJECT_ROOT"
 echo "  Workdir:  $WORKDIR"
+echo "  Batch sz: $BATCH_SIZE"
 echo "=============================================="
 
 # Activate venv
 if [[ -d "$VENV" ]]; then
     source "${VENV}/bin/activate"
     echo "Activated venv: $(which python)"
+fi
+
+# Source bashrc for env vars if not already set
+if [[ -z "${CDSE_CLIENT_ID:-}" ]]; then
+    source "${HOME}/.bashrc" 2>/dev/null || true
 fi
 
 # Ensure env vars
@@ -57,21 +63,28 @@ for v in CDSE_CLIENT_ID CDSE_CLIENT_SECRET GIT_SSH_COMMAND; do
     fi
 done
 export CDSE_CLIENT_ID CDSE_CLIENT_SECRET GIT_SSH_COMMAND
+
+# Compute nodes may have broken proxy settings
 unset http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY
 
-# Pull latest repo state
 cd "$PROJECT_ROOT"
+mkdir -p logs
 git pull --rebase 2>/dev/null || true
 
-# Create workdir
 mkdir -p "$WORKDIR"
 
-# Run pipeline with temp workdir
-python "${PROJECT_ROOT}/scripts/run_pipeline.py" \
-    "$TILE_ID" \
-    --workdir "$WORKDIR"
+if [[ -n "$TILE_ID" ]]; then
+    # Single-tile mode
+    python "${PROJECT_ROOT}/scripts/run_pipeline.py" \
+        "$TILE_ID" \
+        --workdir "$WORKDIR"
+else
+    # Batch mode: auto-pick unclaimed tiles
+    python "${PROJECT_ROOT}/scripts/run_pipeline.py" \
+        --batch-size "$BATCH_SIZE" \
+        --workdir "$WORKDIR"
+fi
 
-# Cleanup
 rm -rf "$WORKDIR"
 
 echo ""

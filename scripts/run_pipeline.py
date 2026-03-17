@@ -63,6 +63,10 @@ def append_jsonl(path, record):
 
 
 def get_worker_id():
+    array_job = os.environ.get("SLURM_ARRAY_JOB_ID")
+    array_task = os.environ.get("SLURM_ARRAY_TASK_ID")
+    if array_job and array_task:
+        return f"slurm-{array_job}_{array_task}"
     slurm_id = os.environ.get("SLURM_JOB_ID")
     if slurm_id:
         return f"slurm-{slurm_id}"
