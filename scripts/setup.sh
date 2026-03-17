@@ -40,17 +40,26 @@ echo "=============================================="
 # ---- 1. Python venv ----
 echo ""
 echo "[1/5] Setting up Python venv at ${VENV_DIR}..."
+
+# Load CVMFS modules on Compute Canada clusters (provides numpy, scipy, etc.)
+if command -v module &>/dev/null; then
+    module load python/3.11 scipy-stack 2>/dev/null && \
+        echo "  Loaded CVMFS: python/3.11 + scipy-stack"
+fi
+
 if [[ -d "$VENV_DIR" ]]; then
     echo "  Venv exists, updating packages..."
     source "${VENV_DIR}/bin/activate"
 else
-    python3 -m venv "$VENV_DIR"
+    # --system-site-packages inherits CVMFS numpy/scipy (optimized builds)
+    python3 -m venv --system-site-packages "$VENV_DIR"
     source "${VENV_DIR}/bin/activate"
-    echo "  Created venv."
+    echo "  Created venv (with system site-packages from CVMFS)."
 fi
 
 pip install --upgrade pip -q
-pip install requests numpy rasterio Pillow scipy scikit-learn -q
+pip install requests rasterio Pillow scikit-learn -q
+# numpy and scipy come from CVMFS scipy-stack (MKL-optimized)
 echo "  Packages installed: $(python -c 'import requests, numpy, rasterio, PIL, scipy, sklearn; print("OK")')"
 
 # ---- 2. SSH deploy key ----

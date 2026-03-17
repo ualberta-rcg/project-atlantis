@@ -31,30 +31,19 @@
 
 **Total scan types:** 18
 
-## Top Candidates Summary
+## Top Sites (max 50)
 
-**Total ranked locations:** 0
+**Sites found:** 0
+(Nearby pixels clustered within ~100m into single sites)
 
-| Confidence Tier | Count | Meaning |
-|----------------|-------|---------|
-| All 16 types agree | 0 | Highest confidence |
-| 14-15 types agree | 0 | Very high confidence |
-| 10-13 types agree | 0 | High confidence |
-| 5-9 types agree | 0 | Moderate confidence |
-| 3-4 types agree | 0 | Low confidence (hotspot) |
-| 1-2 types (single scan) | 0 | Single-scan only |
-
-## Top 20 Locations
-
-| Rank | Lon | Lat | Confidence | Types Agreeing | Source |
-|------|-----|-----|------------|----------------|--------|
+No multi-scan-type hotspots found in this tile.
 
 ## Files
 
-- `top_candidates.geojson` — all ranked candidates (open in QGIS or GitHub map)
+- `top_candidates.geojson` — top sites (open in QGIS or GitHub map)
 - `top_candidates.csv` — same data, spreadsheet-friendly
-- `hotspot_cluster/` — multi-scan-type agreement analysis
-- `*/anomaly.png` — visual heatmap per scan type (viewable on GitHub)
+- `hotspot_cluster/` — full multi-scan-type agreement analysis
+- `*/anomaly.png` — visual heatmap per scan type
 
 ---
-*Generated 2026-03-17T02:54:57Z*
+*Generated 2026-03-17T02:59:55Z*

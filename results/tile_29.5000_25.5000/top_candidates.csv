@@ -1,1 +1,1 @@
-rank,lon,lat,confidence,agreeing_types,source,types,tile_id
+rank,lon,lat,agreeing_types,pixel_count,cluster_size,types,tile_id

@@ -53,14 +53,15 @@ echo "=============================================="
 # Source env vars (separate from .bashrc which skips non-interactive shells)
 if [[ -f "${HOME}/.atlantis_env" ]]; then
     source "${HOME}/.atlantis_env"
-elif [[ -f "${HOME}/.bashrc" ]]; then
-    # Fallback: try bashrc (may fail in non-interactive shells)
-    bash -c "source ${HOME}/.bashrc 2>/dev/null; env" | grep -E '^(CDSE_|GIT_SSH|REPO_URL)' > /tmp/.atlantis_env_$$ 2>/dev/null
-    source /tmp/.atlantis_env_$$ 2>/dev/null || true
-    rm -f /tmp/.atlantis_env_$$
 fi
 
-# Activate venv
+# Load Compute Canada CVMFS modules for consistent software across clusters
+if command -v module &>/dev/null; then
+    module load python/3.11 scipy-stack 2>/dev/null && \
+        echo "Loaded CVMFS: python/3.11 + scipy-stack"
+fi
+
+# Activate project venv (built on top of CVMFS modules)
 if [[ -d "$VENV" ]]; then
     source "${VENV}/bin/activate"
     echo "Activated venv: $(which python)"
