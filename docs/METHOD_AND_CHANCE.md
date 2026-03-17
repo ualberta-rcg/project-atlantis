@@ -4,7 +4,7 @@
 
 We run **all enabled scan types** from `config/scan.json` on each tile. Each scan type detects different kinds of anomalies:
 
-- **Temporal** (variance_95/99, cv, mad, seasonal_difference, multitemporal_change) -- how pixel brightness varies over 8-15 images across time.
+- **Temporal** (variance_99/999, cv, mad, seasonal_difference, multitemporal_change) -- how pixel brightness varies over 8-15 images across time.
 - **Polarimetric** (crosspol_ratio, crosspol_ratio_variance) -- how the VH/VV scattering ratio differs from surroundings or fluctuates.
 - **Spatial** (texture_glcm, edge_detection, spatial_autocorrelation) -- patterns in the mean backscatter image (texture, edges, clustering).
 - **Baseline** (backscatter_intensity) -- reference map, no candidates.

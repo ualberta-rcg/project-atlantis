@@ -20,14 +20,14 @@ results/tile_30.8740_29.2470/
 ├── stack_mean_vv.png                   <- preview of mean VV band
 ├── stack_var_vv.png                    <- preview of variance VV band
 ├── process_record.json                 <- full record: inputs, scan types, candidates, timing
-├── temporal_variance_95/
-│   ├── anomaly.tif                     <- score raster
+├── temporal_variance_99/
+│   ├── anomaly.tif                     <- score raster (top 1%)
 │   ├── anomaly.png                     <- preview (renders on GitHub)
 │   ├── candidates.geojson              <- detected locations with score + chance
 │   ├── candidates.csv                  <- same data, tabular
 │   └── metadata.json                   <- runtime, threshold, candidate count
-├── temporal_variance_99/
-│   └── ... (same structure)
+├── temporal_variance_999/
+│   └── ... (same structure, top 0.1%)
 ├── backscatter_intensity/
 │   ├── intensity_map.tif               <- reference layer
 │   ├── intensity_map.png               <- preview

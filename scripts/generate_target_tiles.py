@@ -61,7 +61,7 @@ def main():
         with open(scan_path) as f:
             scan = json.load(f)
         defaults = scan.get("tile_defaults", {})
-        size_km = defaults.get("size_km", 25)
+        size_km = defaults.get("size_km", 5)
         resolution_m = defaults.get("resolution_m", 10)
         all_tiles = []
         for region in scan.get("scan_regions", []):

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Fetch 2–5 Sentinel-1 images for a named site via CDSE Process API.
-Uses scripts/sites.py for bbox. Writes GeoTIFFs to data/<site_id>/.
+Fetch Sentinel-1 images for a named site via CDSE Process API.
+Uses scripts/sites.py for bbox. Writes GeoTIFFs to results/<site_id>/raw/.
 """
 import os
 import sys
@@ -38,10 +38,10 @@ def main():
     site = SITES[args.site_id]
     bbox = site["bbox"]
     if args.data_dir:
-        out_dir = os.path.join(args.data_dir, args.site_id)
+        out_dir = os.path.join(args.data_dir, args.site_id, "raw")
     else:
         project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        out_dir = os.path.join(project_root, "data", args.site_id)
+        out_dir = os.path.join(project_root, "results", args.site_id, "raw")
     os.makedirs(out_dir, exist_ok=True)
     print(f"Site: {args.site_id} ({site['name']})")
     print(f"Bbox: {bbox}")

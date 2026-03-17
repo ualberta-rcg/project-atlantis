@@ -39,7 +39,7 @@ def write_process_record(
     time_windows,
     size_px,
     steps,
-    threshold_percentile=95,
+    threshold_percentile=99,
     score_band="var_VV + var_VH",
     chance_formula="(score - thresh) / (max_score - thresh)",
     stack_path=None,
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     ap.add_argument("--time-windows", type=str, nargs="+", default=None, help="flat list: start end start end ...")
     ap.add_argument("--size-px", type=int, nargs=2, default=[512, 512])
     ap.add_argument("--steps", nargs="+", default=["fetch_s1", "stack_timeseries", "detect_anomalies"])
-    ap.add_argument("--percentile", type=float, default=95)
+    ap.add_argument("--percentile", type=float, default=99)
     ap.add_argument("--stack", default=None)
     ap.add_argument("--anomaly", default=None)
     ap.add_argument("--candidates-geojson", default=None)

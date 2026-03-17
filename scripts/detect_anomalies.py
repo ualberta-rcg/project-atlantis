@@ -32,7 +32,7 @@ def detect_anomalies(
     stack_path: path to stack GeoTIFF (4 bands: mean_VV, mean_VH, var_VV, var_VH)
     out_dir: where to write candidates.csv, candidates.geojson, anomaly.tif, metadata.json
     score_band: "variance" -> score = var_VV + var_VH; "vv" -> var_VV only; "vh" -> var_VH only
-    percentile_threshold: keep pixels with score >= this percentile (default 95 = top 5%)
+    percentile_threshold: keep pixels with score >= this percentile (default 99 = top 1%)
     min_score: if set, also require score >= min_score (absolute)
     """
     if rasterio is None:
@@ -161,9 +161,9 @@ def main():
     ap.add_argument("stack", help="Stack GeoTIFF (mean_VV, mean_VH, var_VV, var_VH)")
     ap.add_argument("-o", "--out-dir", required=True, help="Output directory")
     ap.add_argument("--site-id", default="", help="Site/tile identifier for CSV/GeoJSON")
-    ap.add_argument("--pathway", default=None, help="Pathway name (e.g. variance_95) for output properties")
+    ap.add_argument("--pathway", default=None, help="Pathway name (e.g. temporal_variance_99) for output properties")
     ap.add_argument("--score", choices=["variance", "vv", "vh"], default="variance")
-    ap.add_argument("--percentile", type=float, default=95)
+    ap.add_argument("--percentile", type=float, default=99)
     ap.add_argument("--min-score", type=float, default=None)
     args = ap.parse_args()
     detect_anomalies(

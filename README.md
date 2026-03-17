@@ -24,7 +24,7 @@ python scripts/run_pipeline.py --batch-size 1
 
 # 5. Check results
 cat processed_tiles.jsonl
-ls results/tile_*/temporal_variance_95/anomaly.png
+ls results/tile_*/temporal_variance_999/anomaly.png
 ```
 
 ## Tile naming
@@ -43,12 +43,12 @@ results/tile_30.8740_29.2470/
 ├── stack_mean_vv.png               <- preview
 ├── stack_var_vv.png                <- preview
 ├── process_record.json             <- full inputs, outputs, timing, reproducibility
-├── temporal_variance_95/
-│   ├── anomaly.tif + anomaly.png   <- score map + preview
+├── temporal_variance_99/
+│   ├── anomaly.tif + anomaly.png   <- score map + preview (top 1%)
 │   ├── candidates.geojson + .csv   <- detected locations
 │   └── metadata.json
-├── temporal_variance_99/
-│   └── ...
+├── temporal_variance_999/
+│   └── ... (same structure, top 0.1%)
 ├── backscatter_intensity/
 │   └── intensity_map.tif + .png
 └── combined_top5/                  <- multi-method consensus (highest confidence)
@@ -75,7 +75,7 @@ results/tile_30.8740_29.2470/
 
 | Category | Scan types |
 |----------|-----------|
-| Temporal | temporal_variance_95, temporal_variance_99, temporal_cv, temporal_mad, seasonal_difference, multitemporal_change |
+| Temporal | temporal_variance_99, temporal_variance_999, temporal_cv, temporal_mad, seasonal_difference, multitemporal_change |
 | Polarimetric | crosspol_ratio, crosspol_ratio_variance |
 | Spatial | texture_glcm, edge_detection, spatial_autocorrelation |
 | Baseline | backscatter_intensity (reference map, no candidates) |

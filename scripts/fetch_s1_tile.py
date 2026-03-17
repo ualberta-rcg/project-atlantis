@@ -2,8 +2,8 @@
 """
 Fetch Sentinel-1 GRD images for a tile via CDSE Process API (v3).
 Generates evenly-spaced time windows across the configured time range,
-fetches one image per window at full resolution (2500x2500 for 25km at 10m).
-Writes GeoTIFFs to data/<tile_id>/. Same bbox and dimensions for all dates.
+fetches one image per window (default 500x500 for 5km at 10m).
+Writes GeoTIFFs to results/<tile_id>/raw/. Same bbox and dimensions for all dates.
 """
 import os
 import sys
@@ -40,7 +40,7 @@ def get_token(client_id, client_secret):
     return r.json()["access_token"]
 
 
-def build_request(bbox, from_date, to_date, width=2500, height=2500):
+def build_request(bbox, from_date, to_date, width=500, height=500):
     return {
         "input": {
             "bounds": {
@@ -97,8 +97,8 @@ def main():
         sys.exit(1)
 
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    data_dir = args.data_dir or os.path.join(project_root, "data")
-    out_dir = os.path.join(data_dir, args.tile_id)
+    data_dir = args.data_dir or os.path.join(project_root, "results")
+    out_dir = os.path.join(data_dir, args.tile_id, "raw")
     os.makedirs(out_dir, exist_ok=True)
 
     scan_path = os.path.join(project_root, "config", "scan.json")
@@ -112,7 +112,7 @@ def main():
 
     size = args.size
     if size is None:
-        size_km = tile_defaults.get("size_km", 25)
+        size_km = tile_defaults.get("size_km", 5)
         res_m = tile_defaults.get("resolution_m", 10)
         size = int(size_km * 1000 / res_m)
 

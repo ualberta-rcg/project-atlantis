@@ -20,8 +20,8 @@ def run(stack_path, images_dir, output_dir, config, tile_id=""):
     config: scan type dict from scan.json (threshold_percentile, name, etc.)
     tile_id: for candidate properties
     """
-    percentile = config.get("threshold_percentile", 95)
-    scan_type_name = config.get("name", "temporal_variance_95")
+    percentile = config.get("threshold_percentile", 99)
+    scan_type_name = config.get("name", "temporal_variance_99")
     os.makedirs(output_dir, exist_ok=True)
     n, thresh = detect_anomalies(
         stack_path,

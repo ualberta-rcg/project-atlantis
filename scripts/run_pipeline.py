@@ -6,7 +6,7 @@ Usage:
   export REPO_URL=... CDSE_CLIENT_ID=... CDSE_CLIENT_SECRET=...
   python run_pipeline.py                    # claim batch, process, push
   python run_pipeline.py --batch-size 1
-  python run_pipeline.py qubbet_el_hawa     # single-tile test (no claim)
+  python run_pipeline.py tile_30.8740_29.2470  # single-tile test (no claim)
 """
 import os
 import sys
@@ -18,7 +18,6 @@ from datetime import datetime, timedelta
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
 CONFIG_DIR = os.path.join(PROJECT_ROOT, "config")
 PROCESSED_PATH = os.path.join(PROJECT_ROOT, "processed_tiles.jsonl")
@@ -126,29 +125,29 @@ def process_one_tile_v3(tile, scan_config, pipeline_config, worker_id):
     """v3: fetch once, build_stack once, run all enabled scan types. Returns (candidates_by_type, images_used, runtime_seconds)."""
     tile_id = tile["tile_id"]
     bbox = tile["bbox"]
-    size_km = tile.get("size_km") or pipeline_config.get("default_size_km") or scan_config.get("tile_defaults", {}).get("size_km", 25)
+    size_km = tile.get("size_km") or pipeline_config.get("default_size_km") or scan_config.get("tile_defaults", {}).get("size_km", 5)
     res_m = tile.get("resolution_m") or pipeline_config.get("default_resolution_m") or scan_config.get("tile_defaults", {}).get("resolution_m", 10)
-    size_px = int(size_km * 1000 / res_m) if size_km and res_m else 250
+    size_px = int(size_km * 1000 / res_m) if size_km and res_m else 500
     enabled = get_enabled_scan_types(scan_config)
     if not enabled:
-        enabled = [{"name": "temporal_variance_95", "threshold_percentile": 95, "score_formula": "var_VV + var_VH"}]
+        enabled = [{"name": "temporal_variance_99", "threshold_percentile": 99, "score_formula": "var_VV + var_VH"}]
 
     out_dir = os.path.join(RESULTS_DIR, tile_id)
-    os.makedirs(out_dir, exist_ok=True)
-    data_tile = os.path.join(DATA_DIR, tile_id)
+    raw_dir = os.path.join(out_dir, "raw")
+    os.makedirs(raw_dir, exist_ok=True)
     t0 = time.time()
 
-    # Fetch once
+    # Fetch once — raw images go into results/<tile_id>/raw/
     try:
         from sites import SITES
         if tile_id in SITES:
-            run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_s1_site.py"), tile_id, "--data-dir", DATA_DIR, "--size", str(size_px)])
+            run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_s1_site.py"), tile_id, "--data-dir", RESULTS_DIR, "--size", str(size_px)])
         else:
-            run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_s1_tile.py"), tile_id, "--bbox", *map(str, bbox), "--data-dir", DATA_DIR, "--size", str(size_px)])
+            run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_s1_tile.py"), tile_id, "--bbox", *map(str, bbox), "--data-dir", RESULTS_DIR, "--size", str(size_px)])
     except ImportError:
-        run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_s1_tile.py"), tile_id, "--bbox", *map(str, bbox), "--data-dir", DATA_DIR, "--size", str(size_px)])
+        run([sys.executable, os.path.join(SCRIPT_DIR, "fetch_s1_tile.py"), tile_id, "--bbox", *map(str, bbox), "--data-dir", RESULTS_DIR, "--size", str(size_px)])
 
-    tifs = sorted([os.path.join(data_tile, f) for f in os.listdir(data_tile) if f.endswith(".tif") and f.startswith("s1_")])
+    tifs = sorted([os.path.join(raw_dir, f) for f in os.listdir(raw_dir) if f.endswith(".tif") and f.startswith("s1_")])
     if not tifs:
         raise RuntimeError(f"No GeoTIFFs after fetch for {tile_id}")
     images_used = len(tifs)
@@ -181,7 +180,7 @@ def process_one_tile_v3(tile, scan_config, pipeline_config, worker_id):
                 candidates_by_type[name] = 0
 
     runtime_seconds = round(time.time() - t0, 2)
-    combined_top5_candidates = candidates_by_type.get("combined_top5", candidates_by_type.get("temporal_variance_95", 0))
+    combined_top5_candidates = candidates_by_type.get("combined_top5", candidates_by_type.get("temporal_variance_99", 0))
 
     # Process record (summary for v3)
     record_path = os.path.join(out_dir, "process_record.json")

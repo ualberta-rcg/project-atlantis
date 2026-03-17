@@ -3,7 +3,7 @@
 Order CARD-COH12 (Sentinel-1 coherence, 12-day pair) from CDSE On-Demand Processing.
 Finds one SLC over the site bbox, submits the order, polls until done, downloads result.
 Use: CDSE_USERNAME + CDSE_PASSWORD (or CDSE_CLIENT_ID + CDSE_CLIENT_SECRET for token).
-Output: coherence product (zip) in data/<site_id>/ or --out-dir.
+Output: coherence product (zip) in results/<site_id>/raw/ or --out-dir.
 """
 import os
 import sys
@@ -146,7 +146,7 @@ def main():
     ap.add_argument("site_id", help="Site key (e.g. qubbet_el_hawa)")
     ap.add_argument("--start", default="2023-01-01", help="Start date for SLC search")
     ap.add_argument("--end", default="2023-01-31", help="End date for SLC search")
-    ap.add_argument("--out-dir", default=None, help="Output dir (default: data/<site_id>)")
+    ap.add_argument("--out-dir", default=None, help="Output dir (default: results/<site_id>/raw)")
     ap.add_argument("--no-download", action="store_true", help="Only submit order, do not poll/download")
     args = ap.parse_args()
 
@@ -179,7 +179,7 @@ def main():
         print(f"Order ended with: {final}", file=sys.stderr)
         sys.exit(1)
 
-    out_dir = args.out_dir or os.path.join(os.path.dirname(__file__), "..", "data", args.site_id)
+    out_dir = args.out_dir or os.path.join(os.path.dirname(__file__), "..", "results", args.site_id, "raw")
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, f"coh12_{args.site_id}_{args.start}_to_{args.end}.zip")
     download_product(token, order_id, out_path)
