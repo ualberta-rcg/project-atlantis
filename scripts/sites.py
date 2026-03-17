@@ -15,6 +15,13 @@ SITES = {
         "name": "Egypt test tile",
         "description": "Small desert tile for pipeline test.",
     },
+    # Hawara Labyrinth -- Herodotus' Egyptian Maze, near Pyramid of Amenemhat III
+    # 5x5 km tile centered on ~30.899E, 29.274N (Hawara pyramid complex)
+    "hawara_labyrinth": {
+        "bbox": [30.874, 29.247, 30.926, 29.293],
+        "name": "Hawara Labyrinth (Faiyum)",
+        "description": "Rumored site of the Egyptian Labyrinth described by Herodotus. Near Pyramid of Amenemhat III at Hawara, Faiyum.",
+    },
 }
 
 DEFAULT_TIME_WINDOWS = [

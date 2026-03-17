@@ -27,9 +27,9 @@
   ],
 
   "tile_defaults": {
-    "size_km": 25,
+    "size_km": 5,
     "resolution_m": 10,
-    "overlap_km": 0.5
+    "overlap_km": 0.1
   },
 
   "imagery": {
@@ -283,7 +283,7 @@
   ],
 
   "api_limits": {
-    "cdse_max_pixels_per_request": 2500,
+    "cdse_max_pixels_per_request": 500,
     "cdse_requests_per_minute": 300,
     "cdse_requests_per_month": 10000,
     "cdse_pu_per_month": 10000,

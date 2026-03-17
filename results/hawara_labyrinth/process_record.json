@@ -1,0 +1,43 @@
+{
+  "tile_id": "hawara_labyrinth",
+  "inputs": {
+    "bbox": [
+      30.874,
+      29.247,
+      30.926,
+      29.293
+    ],
+    "time_window": "2019-01-01/2025-09-10",
+    "source": "CDSE_S1_GRD_IW",
+    "image_count": 11,
+    "resolution_m": 10,
+    "size_px": [
+      500,
+      500
+    ]
+  },
+  "coregistration": {
+    "method": "api_reprojection",
+    "crs": "EPSG:4326"
+  },
+  "scan_types_run": {
+    "temporal_variance_95": {
+      "threshold": 95,
+      "candidates": 12500
+    },
+    "temporal_variance_99": {
+      "threshold": 99,
+      "candidates": 2500
+    },
+    "backscatter_intensity": {
+      "candidates": 0,
+      "notes": "reference map only"
+    }
+  },
+  "run_metadata": {
+    "worker_id": "manual-test",
+    "timestamp_iso": "2026-03-17T00:22:00Z",
+    "runtime_seconds": 870,
+    "notes": "First real test run: 5km tile, 500px, 11 images, Hawara Labyrinth"
+  }
+}

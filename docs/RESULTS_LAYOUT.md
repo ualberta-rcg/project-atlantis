@@ -55,12 +55,26 @@ results/<tile_id>/
 
 ## Data sizes
 
-| Component | Size per tile |
-|-----------|--------------|
-| stack.tif (8 bands, float32) | ~25 MB |
-| Per scan type (anomaly.tif + candidates) | ~7 MB each |
-| 12 enabled scan types | ~84 MB total |
+| Component | Size per tile (5 km / 500 px) |
+|-----------|-------------------------------|
+| One raw image (VV + VH + mask, float32) | ~1.85 MB |
+| 12 raw images (scratch, not committed) | ~22 MB |
+| stack.tif (8 bands, float32) | ~4 MB |
+| Per scan type (anomaly.tif + candidates) | ~1.2 MB each |
+| 12 enabled scan types | ~15 MB total |
 | Process records + metadata | ~50 KB |
-| **Total committed per tile** | **~110 MB** |
+| **Total committed per tile** | **~19 MB** |
+
+## Measured API timing (free tier, CDSE Process API)
+
+| Tile size | Pixels | Resolution | Time per image | File size |
+|-----------|--------|-----------|---------------|-----------|
+| **5 km / 500 px** | 500x500 | **10 m** | **~102 s** | **1.85 MB** |
+| 5 km / 250 px | 250x250 | 20 m | ~11 s | 0.47 MB |
+| 25 km / 500 px | 500x500 | 50 m | ~11 s | 1.93 MB |
+| 25 km / 1000 px | 1000x1000 | 25 m | ~23 s | 7.71 MB |
+| 25 km / 2500 px | 2500x2500 | 10 m | >5 min (timeout) | -- |
+
+The 5 km / 500 px tile at 10 m resolution is the practical sweet spot on the free tier: full native resolution, reasonable fetch time (~20 min for 12 images).
 
 Git LFS is required (`.gitattributes` tracks `results/**/*.tif`).

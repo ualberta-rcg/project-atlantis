@@ -15,9 +15,9 @@ Fetching from the CDSE API is slow (minutes per tile, rate-limited). Running 12 
 5. Appends to `processed_tiles.jsonl` (tile_id, scan_types_run, candidates_by_type, images_used).
 6. Pushes with retry (pull --rebase + jitter).
 
-## Resolution
+## Resolution and tile size
 
-10 m/pixel -- the maximum useful resolution from Sentinel-1 IW GRD. Tiles are 25x25 km = 2500x2500 pixels. Preferred 12 images per tile for robust temporal statistics.
+10 m/pixel -- the maximum useful resolution from Sentinel-1 IW GRD. Tiles are **5x5 km = 500x500 pixels** (practical limit on free CDSE tier; 25 km / 2500 px times out). Preferred 12 images per tile for robust temporal statistics. Each image takes ~102 s to fetch at this size; 12 images ~20 min per tile.
 
 ## Scan types (15 defined, 12 enabled)
 
@@ -53,10 +53,12 @@ Jobs claim tiles via `claimed_tiles.jsonl` (append-only, TTL 180 min). Completed
 
 REPO_URL, CDSE_CLIENT_ID, CDSE_CLIENT_SECRET, GIT_SSH_COMMAND (all in `~/.bashrc`). Optional: BATCH_SIZE, CLUSTER_ID, SCRATCH_DIR. See `docs/SERVICES_AND_ENV.md`.
 
-## Scaling
+## Scaling (at 5 km / 500 px tiles)
 
-| Scale | Tiles | Storage | Time (commercial CDSE) |
-|-------|-------|---------|----------------------|
-| One region (Western Desert) | ~440 | ~48 GB | ~1 day |
-| Four regions | ~2,500 | ~275 GB | ~1 week |
-| All world deserts | ~50,000 | ~5.5 TB | ~2 months |
+| Scale | Tiles | Storage | Time (1 worker) | Time (50 workers) |
+|-------|-------|---------|-----------------|-------------------|
+| One region (Western Desert) | ~11,000 | ~209 GB | ~5 months | ~3 days |
+| Four regions | ~62,000 | ~1.2 TB | ~2.4 years | ~18 days |
+| All world deserts | ~480,000 | ~9 TB | -- | ~6 months |
+
+At 5 km tiles the count is higher but each tile is smaller to fetch and store. Commercial CDSE tier allows larger requests (25 km / 2500 px) which cuts tile count by 25x.

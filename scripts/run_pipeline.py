@@ -25,7 +25,7 @@ PROCESSED_PATH = os.path.join(PROJECT_ROOT, "processed_tiles.jsonl")
 CLAIMED_PATH = os.path.join(PROJECT_ROOT, "claimed_tiles.jsonl")
 TARGET_TILES_PATH = os.path.join(CONFIG_DIR, "target_tiles.json")
 SCAN_CONFIG_PATH = os.path.join(CONFIG_DIR, "scan.json")
-PIPELINE_CONFIG_PATH = os.path.join(CONFIG_DIR, "pipeline.json")
+PIPELINE_CONFIG_PATH = os.path.join(CONFIG_DIR, "pipeline.json")  # legacy, may not exist
 
 sys.path.insert(0, SCRIPT_DIR)
 

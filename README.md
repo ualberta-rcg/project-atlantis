@@ -34,12 +34,12 @@ sbatch --array=0-99 slurm/submit_array.sh
 
 ## Config
 
-- **config/scan.json** -- Master config: scan_regions, tile_defaults (25 km, 10 m), imagery (8-15 images), all scan_types (15 defined, 12 enabled by default), composite_scores, api_limits, job_defaults.
+- **config/scan.json** -- Master config: scan_regions, tile_defaults (5 km, 10 m, 500x500 px), imagery (8-15 images), all scan_types (15 defined, 12 enabled by default), composite_scores, api_limits, job_defaults.
 - **config/target_tiles.json** -- Generated from scan.json: `python scripts/generate_target_tiles.py --from-scan`
 
 ## v3 pipeline (per tile)
 
-1. **Fetch** imagery once (12 S1 GRD images, same bbox, 2500x2500 px)
+1. **Fetch** imagery once (12 S1 GRD images, same bbox, 500x500 px at 10 m/pixel, ~102 s/image)
 2. **Build stack** once (mean/var/std/median VV+VH -> stack.tif)
 3. **Run all enabled scan types** on that stack (each writes to `results/<tile_id>/<scan_type>/`)
 4. **Compute composite scores** (combined_top5: multi-method agreement)
