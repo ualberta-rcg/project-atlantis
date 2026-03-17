@@ -1,0 +1,19 @@
+{
+  "scan_type": "hotspot_cluster",
+  "tile_id": "tile_30.8740_29.2470",
+  "num_candidates": 1004,
+  "candidate_count": 1004,
+  "min_agreeing_types": 3,
+  "radius_deg": 0.001,
+  "input_candidates": 45237,
+  "input_scan_types": [
+    "db_variance",
+    "depolarization_fraction",
+    "local_contrast",
+    "moisture_differential",
+    "speckle_divergence",
+    "temporal_variance_99",
+    "temporal_variance_999"
+  ],
+  "run_time_utc": "2026-03-17T01:46:48.526649Z"
+}

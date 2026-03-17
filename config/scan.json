@@ -251,6 +251,87 @@
       "notes": "Disabled by default -- expensive. Enable for tiles with high-confidence candidates. Requires ISCE2 installed."
     },
     {
+      "name": "speckle_divergence",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Speckle Divergence Index: ratio of observed variance to expected speckle variance. SDI >> 1 = real physical change, not just noise.",
+      "method": "SDI = var_observed / (mean^2 / N_images). Expected speckle variance for N GRD looks = mean^2/N. Pixels with SDI >> 1 have real temporal change beyond what speckle alone produces.",
+      "detects": "Only genuine physical changes: buried structures affecting surface moisture/roughness differently across time. Filters out the majority of speckle-induced false positives that plague raw variance.",
+      "score_formula": "var_VV/(mean_VV^2/N) + var_VH/(mean_VH^2/N)",
+      "threshold_percentile": 99,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3,
+      "config": { "num_images": 12 }
+    },
+    {
+      "name": "db_variance",
+      "category": "temporal",
+      "enabled": true,
+      "description": "Variance in decibel domain. SAR amplitude follows Rayleigh/Gamma distribution; dB transform makes it more Gaussian, revealing subtle features hidden in linear domain.",
+      "method": "Delta method: var_dB = (10/ln10)^2 * var_linear / mean^2. High dB variance = feature whose backscatter changes noticeably over time relative to its brightness.",
+      "detects": "Subtle subsurface features in both bright and dark areas. Raw variance is biased toward bright pixels; dB variance normalizes for that while preserving the multiplicative nature of SAR signal.",
+      "score_formula": "(10/ln10)^2 * (var_VV/mean_VV^2 + var_VH/mean_VH^2)",
+      "threshold_percentile": 99,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
+    },
+    {
+      "name": "moisture_differential",
+      "category": "polarimetric",
+      "enabled": true,
+      "description": "Soil Moisture Differential: detects where VV and VH temporal behaviors diverge. VV is sensitive to dielectric constant (moisture); VH responds to roughness/volume scattering.",
+      "method": "Score = |log10(var_VV / var_VH)|. Where VV varies over time but VH stays stable, the change is likely dielectric (moisture-retention anomaly from buried structures).",
+      "detects": "Buried walls, foundations, and channels that retain or shed moisture differently than surrounding soil. These create VV-only temporal signatures because VV responds to dielectric constant while VH does not.",
+      "score_formula": "abs(log10(var_VV / var_VH))",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 3
+    },
+    {
+      "name": "depolarization_fraction",
+      "category": "polarimetric",
+      "enabled": true,
+      "description": "Depolarization Fraction anomaly: VH/(VV+VH) measures what fraction of incident radar energy is scattered into the cross-pol channel.",
+      "method": "Compute depol = mean_VH / (mean_VV + mean_VH), then anomaly = |depol - local_median|. Double-bounce scattering (dihedral: wall+ground) has different depol than single-bounce (flat desert).",
+      "detects": "Buried right-angle structures (wall foundations, building corners) that create dihedral reflectors. Also detects rubble fields and collapsed chambers that cause volume scattering.",
+      "score_formula": "abs(VH/(VV+VH) - local_median(VH/(VV+VH)))",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 5
+    },
+    {
+      "name": "local_contrast",
+      "category": "spatial",
+      "enabled": true,
+      "description": "Local Contrast Ratio: pixel/local_mean in log domain. Highlights targets that stand out from their immediate neighborhood.",
+      "method": "For VV and VH: compute |log(pixel/local_mean)| with a sliding window. Features that are brighter or darker than surroundings score high, regardless of absolute brightness.",
+      "detects": "Small isolated structures (tombs, wells, cisterns) and sharp boundaries (walls, roads) that create local backscatter anomalies against homogeneous terrain.",
+      "score_formula": "|log(VV/local_mean_VV)| + |log(VH/local_mean_VH)|",
+      "threshold_percentile": 95,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 5,
+      "config": { "window_size": 31 }
+    },
+    {
+      "name": "hotspot_cluster",
+      "category": "composite",
+      "enabled": true,
+      "description": "Multi-scan-type hotspot clustering. Identifies locations where candidates from multiple independent scan types agree spatially.",
+      "method": "Load all candidates from other scan types, cluster with DBSCAN or KD-tree. Hotspot = location where >= N independent scan types flagged anomalies within a radius.",
+      "detects": "Highest-confidence archaeological candidates. When temporal, polarimetric, and spatial methods independently flag the same spot, probability of real subsurface feature is high.",
+      "score_formula": "agreeing_types / total_types",
+      "threshold_percentile": null,
+      "extra_data_needed": null,
+      "gpu_accelerated": false,
+      "cpu_seconds_estimate": 5,
+      "config": { "min_agreeing_types": 3, "radius_deg": 0.001 }
+    },
+    {
       "name": "ml_detector",
       "category": "ml",
       "enabled": false,
@@ -269,14 +350,16 @@
   "composite_scores": [
     {
       "name": "combined_top5",
-      "description": "Weighted combination of the 5 strongest independent scan types. Tiles where multiple scan types agree have highest confidence.",
-      "method": "Normalize each scan type's score to 0-1 across the tile. Combined = weighted sum. Candidate must appear in at least 2 scan types.",
+      "description": "Weighted combination of the strongest independent scan types.",
+      "method": "Normalize each score to 0-1 across tile. Combined = weighted sum. Candidate must appear in at least 2 types.",
       "components": [
-        { "scan_type": "temporal_variance_99", "weight": 1.0 },
-        { "scan_type": "temporal_cv", "weight": 0.8 },
-        { "scan_type": "crosspol_ratio", "weight": 0.7 },
-        { "scan_type": "texture_glcm", "weight": 0.6 },
-        { "scan_type": "spatial_autocorrelation", "weight": 0.5 }
+        { "scan_type": "speckle_divergence", "weight": 1.0 },
+        { "scan_type": "temporal_variance_99", "weight": 0.9 },
+        { "scan_type": "moisture_differential", "weight": 0.8 },
+        { "scan_type": "depolarization_fraction", "weight": 0.7 },
+        { "scan_type": "local_contrast", "weight": 0.6 },
+        { "scan_type": "crosspol_ratio", "weight": 0.5 },
+        { "scan_type": "edge_detection", "weight": 0.4 }
       ],
       "min_agreeing_types": 2
     }

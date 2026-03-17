@@ -255,6 +255,229 @@ def run_backscatter_intensity(stack_path, output_dir, config, tile_id):
     return 0
 
 
+# ---------- NEW SCAN TYPES (v3.1) ----------
+
+
+def run_speckle_divergence(stack_path, output_dir, config, tile_id):
+    """
+    Speckle Divergence Index: separates real physical change from SAR speckle noise.
+    For N-look GRD data, expected speckle variance = mean^2 / ENL.
+    SDI = observed_variance / expected_speckle_variance.
+    SDI >> 1 means real change; SDI ~ 1 means just speckle.
+    """
+    bands, profile, transform, nodata = read_stack(stack_path)
+    num_images = config.get("config", {}).get("num_images", 12)
+    eps = 1e-20
+    expected_var_vv = (bands["mean_vv"] ** 2) / max(num_images, 1) + eps
+    expected_var_vh = (bands["mean_vh"] ** 2) / max(num_images, 1) + eps
+    sdi_vv = bands["var_vv"] / expected_var_vv
+    sdi_vh = bands["var_vh"] / expected_var_vh
+    score = sdi_vv + sdi_vh
+    valid = np.isfinite(score) & (score > 0) & (bands["mean_vv"] > eps)
+    if nodata is not None:
+        valid &= (bands["mean_vv"] != nodata)
+    pct = config.get("threshold_percentile", 99)
+    return threshold_and_output(score, valid, pct, output_dir, profile, transform, tile_id, "speckle_divergence")
+
+
+def run_db_variance(stack_path, output_dir, config, tile_id):
+    """
+    dB-domain variance: convert mean and variance to decibel scale before scoring.
+    In dB, the distribution is more Gaussian and subtle features become prominent.
+    Uses delta method: var_dB ≈ (10/ln10)^2 * var_linear / mean_linear^2
+    """
+    bands, profile, transform, nodata = read_stack(stack_path)
+    eps = 1e-20
+    k = (10.0 / np.log(10.0)) ** 2
+    var_db_vv = k * bands["var_vv"] / (bands["mean_vv"] ** 2 + eps)
+    var_db_vh = k * bands["var_vh"] / (bands["mean_vh"] ** 2 + eps)
+    score = var_db_vv + var_db_vh
+    valid = np.isfinite(score) & (score > 0) & (bands["mean_vv"] > eps)
+    if nodata is not None:
+        valid &= (bands["mean_vv"] != nodata)
+    pct = config.get("threshold_percentile", 99)
+    return threshold_and_output(score, valid, pct, output_dir, profile, transform, tile_id, "db_variance")
+
+
+def run_moisture_differential(stack_path, output_dir, config, tile_id):
+    """
+    Soil Moisture Differential: VV is sensitive to soil moisture + structure;
+    VH is sensitive to volume scattering (vegetation, roughness).
+    Where VV temporal variance is high but VH is stable, the signal likely comes
+    from dielectric anomalies (buried walls/foundations retaining moisture differently).
+    Score = var_VV / (var_VH + eps) — high means VV-only change.
+    """
+    bands, profile, transform, nodata = read_stack(stack_path)
+    eps = 1e-20
+    ratio = bands["var_vv"] / (bands["var_vh"] + eps)
+    score = np.abs(np.log10(ratio + eps))
+    valid = np.isfinite(score) & (score > 0) & (bands["var_vh"] > eps)
+    if nodata is not None:
+        valid &= (bands["mean_vv"] != nodata)
+    pct = config.get("threshold_percentile", 95)
+    return threshold_and_output(score, valid, pct, output_dir, profile, transform, tile_id, "moisture_differential")
+
+
+def run_depolarization_fraction(stack_path, output_dir, config, tile_id):
+    """
+    Depolarization Fraction: VH / (VV + VH).
+    Measures what fraction of energy is depolarized by the surface.
+    Buried structures cause double-bounce scattering → different depol fraction
+    than flat desert (single-bounce). Anomaly = deviation from local median.
+    """
+    bands, profile, transform, nodata = read_stack(stack_path)
+    eps = 1e-20
+    depol = bands["mean_vh"] / (bands["mean_vv"] + bands["mean_vh"] + eps)
+    from scipy.ndimage import median_filter
+    local_med = median_filter(depol, size=31)
+    score = np.abs(depol - local_med)
+    valid = np.isfinite(score) & (score > 0) & np.isfinite(depol)
+    if nodata is not None:
+        valid &= (bands["mean_vv"] != nodata)
+    pct = config.get("threshold_percentile", 95)
+    return threshold_and_output(score, valid, pct, output_dir, profile, transform, tile_id, "depolarization_fraction")
+
+
+def run_local_contrast(stack_path, output_dir, config, tile_id):
+    """
+    Local Contrast Ratio: pixel / local_mean.
+    Highlights features that stand out against their neighborhood regardless
+    of overall scene brightness. Values far from 1.0 = anomalous.
+    """
+    bands, profile, transform, nodata = read_stack(stack_path)
+    from scipy.ndimage import uniform_filter
+    win = config.get("config", {}).get("window_size", 31)
+    local_mean_vv = uniform_filter(bands["mean_vv"], size=win)
+    local_mean_vh = uniform_filter(bands["mean_vh"], size=win)
+    eps = 1e-20
+    contrast_vv = np.abs(np.log(bands["mean_vv"] / (local_mean_vv + eps) + eps))
+    contrast_vh = np.abs(np.log(bands["mean_vh"] / (local_mean_vh + eps) + eps))
+    score = contrast_vv + contrast_vh
+    valid = np.isfinite(score) & (score > 0) & (local_mean_vv > eps)
+    if nodata is not None:
+        valid &= (bands["mean_vv"] != nodata)
+    pct = config.get("threshold_percentile", 95)
+    return threshold_and_output(score, valid, pct, output_dir, profile, transform, tile_id, "local_contrast")
+
+
+def run_hotspot_cluster(stack_path, output_dir, config, tile_id):
+    """
+    Candidate Hotspot Clustering: load candidates from all other scan types
+    for this tile, cluster with DBSCAN. Locations where >=N scan types agree
+    within a radius are high-confidence.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    tile_dir = os.path.dirname(output_dir)
+    import glob
+
+    all_coords = []
+    all_scan_types = []
+    for gj_path in sorted(glob.glob(os.path.join(tile_dir, "*", "candidates.geojson"))):
+        st_name = os.path.basename(os.path.dirname(gj_path))
+        if st_name == "hotspot_cluster":
+            continue
+        try:
+            with open(gj_path) as f:
+                fc = json.load(f)
+            for feat in fc.get("features", []):
+                c = feat["geometry"]["coordinates"]
+                all_coords.append((c[0], c[1]))
+                all_scan_types.append(st_name)
+        except Exception:
+            continue
+
+    if not all_coords:
+        with open(os.path.join(output_dir, "metadata.json"), "w") as f:
+            json.dump({"scan_type": "hotspot_cluster", "tile_id": tile_id,
+                        "num_candidates": 0, "candidate_count": 0,
+                        "min_agreeing_types": config.get("config", {}).get("min_agreeing_types", 3),
+                        "run_time_utc": datetime.utcnow().isoformat() + "Z"}, f, indent=2)
+        return 0
+
+    coords_arr = np.array(all_coords)
+    scan_arr = np.array(all_scan_types)
+    min_agree = config.get("config", {}).get("min_agreeing_types", 3)
+    radius_deg = config.get("config", {}).get("radius_deg", 0.001)
+
+    try:
+        from sklearn.cluster import DBSCAN
+    except ImportError:
+        from scipy.spatial import cKDTree
+        tree = cKDTree(coords_arr)
+        groups = tree.query_ball_tree(tree, r=radius_deg)
+        hotspots = []
+        seen = set()
+        for i, group in enumerate(groups):
+            types_in_group = set(scan_arr[g] for g in group)
+            if len(types_in_group) >= min_agree and i not in seen:
+                center_lon = float(np.mean(coords_arr[group, 0]))
+                center_lat = float(np.mean(coords_arr[group, 1]))
+                hotspots.append({
+                    "lon": center_lon, "lat": center_lat,
+                    "agreeing_types": len(types_in_group),
+                    "types": sorted(types_in_group),
+                    "n_candidates": len(group),
+                })
+                seen.update(group)
+    else:
+        db = DBSCAN(eps=radius_deg, min_samples=min_agree, metric="euclidean")
+        labels = db.fit_predict(coords_arr)
+        hotspots = []
+        for lab in set(labels):
+            if lab == -1:
+                continue
+            mask = labels == lab
+            types_in_cluster = set(scan_arr[mask])
+            if len(types_in_cluster) >= min_agree:
+                center_lon = float(np.mean(coords_arr[mask, 0]))
+                center_lat = float(np.mean(coords_arr[mask, 1]))
+                hotspots.append({
+                    "lon": center_lon, "lat": center_lat,
+                    "agreeing_types": len(types_in_cluster),
+                    "types": sorted(types_in_cluster),
+                    "n_candidates": int(mask.sum()),
+                })
+
+    hotspots.sort(key=lambda h: -h["agreeing_types"])
+
+    features = []
+    for h in hotspots:
+        score = h["agreeing_types"] / max(len(set(all_scan_types)), 1)
+        features.append({
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [h["lon"], h["lat"]]},
+            "properties": {
+                "lon": h["lon"], "lat": h["lat"],
+                "score": score, "chance": score,
+                "agreeing_types": h["agreeing_types"],
+                "types": h["types"],
+                "n_candidates": h["n_candidates"],
+                "tile_id": tile_id, "pathway": "hotspot_cluster",
+            },
+        })
+
+    with open(os.path.join(output_dir, "candidates.geojson"), "w") as f:
+        json.dump({"type": "FeatureCollection", "features": features}, f, indent=2)
+
+    with open(os.path.join(output_dir, "candidates.csv"), "w") as f:
+        f.write("lon,lat,agreeing_types,types,n_candidates,score,tile_id\n")
+        for h in hotspots:
+            f.write(f"{h['lon']},{h['lat']},{h['agreeing_types']},\"{';'.join(h['types'])}\",{h['n_candidates']},{h['agreeing_types']},{tile_id}\n")
+
+    with open(os.path.join(output_dir, "metadata.json"), "w") as f:
+        json.dump({
+            "scan_type": "hotspot_cluster", "tile_id": tile_id,
+            "num_candidates": len(hotspots), "candidate_count": len(hotspots),
+            "min_agreeing_types": min_agree, "radius_deg": radius_deg,
+            "input_candidates": len(all_coords),
+            "input_scan_types": sorted(set(all_scan_types)),
+            "run_time_utc": datetime.utcnow().isoformat() + "Z",
+        }, f, indent=2)
+
+    print(f"  hotspot_cluster: {len(hotspots)} hotspots (from {len(all_coords)} candidates across {len(set(all_scan_types))} types)")
+    return len(hotspots)
+
+
 RUNNERS = {
     "temporal_variance": run_temporal_variance,
     "temporal_cv": run_temporal_cv,
@@ -267,6 +490,12 @@ RUNNERS = {
     "multitemporal_change": run_multitemporal_change,
     "texture_glcm": run_texture_glcm,
     "backscatter_intensity": run_backscatter_intensity,
+    "speckle_divergence": run_speckle_divergence,
+    "db_variance": run_db_variance,
+    "moisture_differential": run_moisture_differential,
+    "depolarization_fraction": run_depolarization_fraction,
+    "local_contrast": run_local_contrast,
+    "hotspot_cluster": run_hotspot_cluster,
 }
 
 

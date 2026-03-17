@@ -1,0 +1,9 @@
+{
+  "scan_type": "speckle_divergence",
+  "tile_id": "tile_54.6050_18.2300",
+  "percentile_threshold": 99,
+  "threshold_used": 25.357925635966062,
+  "num_candidates": 2500,
+  "candidate_count": 2500,
+  "run_time_utc": "2026-03-17T01:45:59.806956Z"
+}

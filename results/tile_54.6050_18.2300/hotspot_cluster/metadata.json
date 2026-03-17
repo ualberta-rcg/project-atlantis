@@ -1,0 +1,28 @@
+{
+  "scan_type": "hotspot_cluster",
+  "tile_id": "tile_54.6050_18.2300",
+  "num_candidates": 1852,
+  "candidate_count": 1852,
+  "min_agreeing_types": 3,
+  "radius_deg": 0.001,
+  "input_candidates": 157706,
+  "input_scan_types": [
+    "crosspol_ratio",
+    "crosspol_ratio_variance",
+    "db_variance",
+    "depolarization_fraction",
+    "edge_detection",
+    "local_contrast",
+    "moisture_differential",
+    "multitemporal_change",
+    "seasonal_difference",
+    "spatial_autocorrelation",
+    "speckle_divergence",
+    "temporal_cv",
+    "temporal_mad",
+    "temporal_variance_99",
+    "temporal_variance_999",
+    "texture_glcm"
+  ],
+  "run_time_utc": "2026-03-17T01:46:29.368196Z"
+}

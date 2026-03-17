@@ -1,0 +1,9 @@
+{
+  "scan_type": "depolarization_fraction",
+  "tile_id": "tile_30.8740_29.2470",
+  "percentile_threshold": 95,
+  "threshold_used": 0.09470947956314715,
+  "num_candidates": 12487,
+  "candidate_count": 12487,
+  "run_time_utc": "2026-03-17T01:46:42.465066Z"
+}
