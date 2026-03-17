@@ -30,7 +30,7 @@ if [[ -z "$TILE_ID" ]]; then
     exit 1
 fi
 
-PROJECT_ROOT="${PROJECT_ROOT:-$(cd "$(dirname "$0")/.." && pwd)}"
+PROJECT_ROOT="${PROJECT_ROOT:-${HOME}/project-atlantis}"
 VENV="${VENV:-${HOME}/venv_cdse}"
 WORKDIR="/tmp/atlantis_${SLURM_JOB_ID:-$$}"
 
