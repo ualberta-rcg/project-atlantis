@@ -1,0 +1,9 @@
+{
+  "scan_type": "crosspol_ratio",
+  "tile_id": "tile_54.6050_18.2300",
+  "percentile_threshold": 95,
+  "threshold_used": 0.1874625594739404,
+  "num_candidates": 12470,
+  "candidate_count": 12470,
+  "run_time_utc": "2026-03-17T01:25:29.421575Z"
+}
