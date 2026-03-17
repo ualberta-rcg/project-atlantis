@@ -16,11 +16,24 @@ SITES = {
         "description": "Small desert tile for pipeline test.",
     },
     # Hawara Labyrinth -- Herodotus' Egyptian Maze, near Pyramid of Amenemhat III
-    # 5x5 km tile centered on ~30.899E, 29.274N (Hawara pyramid complex)
     "hawara_labyrinth": {
         "bbox": [30.874, 29.247, 30.926, 29.293],
         "name": "Hawara Labyrinth (Faiyum)",
         "description": "Rumored site of the Egyptian Labyrinth described by Herodotus. Near Pyramid of Amenemhat III at Hawara, Faiyum.",
+    },
+    # Tanis (San el-Hagar) -- capital of Egypt during 21st-22nd Dynasties
+    # 5km tile: center ~31.878E, 30.978N
+    "tanis": {
+        "bbox": [31.850, 30.955, 31.905, 31.000],
+        "name": "Tanis (San el-Hagar)",
+        "description": "Royal tombs, temples of Amun. Vast unexcavated areas. Sarah Parcak identified buried structures via satellite.",
+    },
+    # Ubar / Shisr -- 'Atlantis of the Sands', discovered via radar imagery
+    # 5km tile: center ~54.633E, 18.255N
+    "ubar": {
+        "bbox": [54.605, 18.230, 54.660, 18.280],
+        "name": "Ubar (Shisr, Oman)",
+        "description": "Ancient frankincense trading post. Discovered 1992 using Shuttle Imaging Radar. Collapsed sinkhole over limestone cavern.",
     },
 }
 

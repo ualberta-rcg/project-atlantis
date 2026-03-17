@@ -13,5 +13,15 @@
     "bbox": [30.874, 29.247, 30.926, 29.293],
     "name": "Hawara Labyrinth (Faiyum)",
     "description": "Rumored site of the Egyptian Labyrinth described by Herodotus. Near Pyramid of Amenemhat III."
+  },
+  "tanis": {
+    "bbox": [31.850, 30.955, 31.905, 31.000],
+    "name": "Tanis (San el-Hagar)",
+    "description": "Royal tombs, temples of Amun. Vast unexcavated areas. Sarah Parcak identified buried structures via satellite."
+  },
+  "ubar": {
+    "bbox": [54.605, 18.230, 54.660, 18.280],
+    "name": "Ubar (Shisr, Oman)",
+    "description": "Ancient frankincense trading post. Discovered 1992 using Shuttle Imaging Radar."
   }
 }
