@@ -1,0 +1,36 @@
+==============================================
+Atlantis pipeline — Tue Mar 17 02:46:12 UTC 2026
+  Tile:     AUTO (batch mode)
+  Job ID:   1591_1
+  Node:     eureka2
+  Project:  /home/clg_98da5933b7a1/project-atlantis
+  Workdir:  /tmp/atlantis_1591_1
+  Batch sz: 1
+==============================================
+Activated venv: /home/clg_98da5933b7a1/venv_cdse/bin/python
+Already up to date.
+[run] git add -A
+[run] git stash
+Saved working directory and index state WIP on main: 47e6a45 Fix batch mode datetime bug, add tile_29.5000_25.5901 results
+[run] git pull --rebase
+Already up to date.
+[run] git stash pop
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   logs/atlantis_1591_1.err
+	new file:   logs/atlantis_1591_1.out
+	new file:   logs/atlantis_1591_2.err
+	new file:   logs/atlantis_1591_2.out
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	logs/.nfs000000000000e2f9000017fe
+	logs/.nfs000000000000e2fa000017fd
+	logs/.nfs000000000000e8ac000017fc
+	logs/.nfs000000000000e8ad000017fb
+
+Dropped refs/stash@{0} (259a617ac17c0282331a799fb129a1f3166c06f1)
+[run] git add results/ processed_tiles.jsonl claimed_tiles.jsonl logs/
