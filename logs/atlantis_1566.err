@@ -1,0 +1,4 @@
+/home/clg_98da5933b7a1/project-atlantis/scripts/generate_pngs.py:33: RuntimeWarning: invalid value encountered in cast
+  return ((clipped - lo) / (hi - lo) * 255).astype(np.uint8)
+To github.com:ualberta-rcg/project-atlantis.git
+   85f7631..53f154e  main -> main

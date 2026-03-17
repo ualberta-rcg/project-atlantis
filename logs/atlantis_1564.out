@@ -1,0 +1,49 @@
+==============================================
+Atlantis pipeline — Tue Mar 17 01:02:56 UTC 2026
+  Tile:     tile_31.8500_30.9550
+  Job ID:   1564
+  Node:     eureka2
+  Project:  /home/clg_98da5933b7a1/project-atlantis
+  Workdir:  /tmp/atlantis_1564
+==============================================
+Activated venv: /home/clg_98da5933b7a1/venv_cdse/bin/python
+Already up to date.
+
+============================================================
+[tile] tile_31.8500_30.9550  bbox=[31.85, 30.955, 31.905, 31.0]  500x500px
+[tile] Working in: /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550
+============================================================
+
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/fetch_s1_tile.py tile_31.8500_30.9550 --bbox 31.85 30.955 31.905 31.0 --data-dir /tmp/atlantis_1564/atlantis_slurm-1564 --size 500
+Fetching 12 images for tile_31.8500_30.9550 at 500x500 px
+Bbox: [31.85, 30.955, 31.905, 31.0]
+Token obtained.
+  [1/12] 2019-01-01 to 2019-01-15 ... OK (1.9 MB)
+  [2/12] 2019-09-01 to 2019-09-15 ... OK (1.9 MB)
+  [3/12] 2020-05-01 to 2020-05-15 ... OK (1.9 MB)
+  [4/12] 2020-12-30 to 2021-01-13 ... OK (1.9 MB)
+  [5/12] 2021-08-30 to 2021-09-13 ... OK (1.9 MB)
+  [6/12] 2022-04-30 to 2022-05-14 ... OK (1.9 MB)
+  [7/12] 2022-12-29 to 2023-01-12 ... OK (1.8 MB)
+  [8/12] 2023-08-29 to 2023-09-12 ... OK (1.9 MB)
+  [9/12] 2024-04-28 to 2024-05-12 ... OK (1.9 MB)
+  [10/12] 2024-12-27 to 2025-01-10 ... OK (1.9 MB)
+  [11/12] 2025-08-27 to 2025-09-10 ... OK (1.9 MB)
+  [12/12] 2026-04-27 to 2026-05-11 ... OK (0.0 MB)
+Done. 12 images saved to /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw
+[fetch] 12 images downloaded
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/build_stack.py -o /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/stack.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2019-01-01_to_2019-01-15.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2019-09-01_to_2019-09-15.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2020-05-01_to_2020-05-15.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2020-12-30_to_2021-01-13.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2021-08-30_to_2021-09-13.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2022-04-30_to_2022-05-14.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2022-12-29_to_2023-01-12.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2023-08-29_to_2023-09-12.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2024-04-28_to_2024-05-12.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2024-12-27_to_2025-01-10.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2025-08-27_to_2025-09-10.tif /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/raw/s1_2026-04-27_to_2026-05-11.tif
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/stack.tif
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/stack.tif temporal_variance_99 /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_99 tile_31.8500_30.9550
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_99/anomaly.tif
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_99/candidates.csv (2500 candidates)
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_99/candidates.geojson
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_99/metadata.json
+[scan] temporal_variance_99: 2500 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/stack.tif temporal_variance_999 /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_999 tile_31.8500_30.9550
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_999/anomaly.tif
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_999/candidates.csv (250 candidates)
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_999/candidates.geojson
+Wrote /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_variance_999/metadata.json
+[scan] temporal_variance_999: 250 candidates
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/stack.tif temporal_cv /tmp/atlantis_1564/atlantis_slurm-1564/tile_31.8500_30.9550/temporal_cv tile_31.8500_30.9550

@@ -1,0 +1,7 @@
+/home/clg_98da5933b7a1/project-atlantis/scripts/generate_pngs.py:33: RuntimeWarning: invalid value encountered in cast
+  return ((clipped - lo) / (hi - lo) * 255).astype(np.uint8)
+To github.com:ualberta-rcg/project-atlantis.git
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at 53f154ee7e436247dbc4dc4282c6087a0203e92f but expected 85f7631b2494a168a7fb737765799f2f0be7d4bf)
+error: failed to push some refs to 'github.com:ualberta-rcg/project-atlantis.git'
+To github.com:ualberta-rcg/project-atlantis.git
+   53f154e..4235885  main -> main

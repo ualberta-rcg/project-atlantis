@@ -1,0 +1,9 @@
+==============================================
+Atlantis pipeline — Tue Mar 17 01:01:18 UTC 2026
+  Tile:     tile_54.6050_18.2300
+  Job ID:   1559
+  Node:     eureka2
+  Project:  /var/spool/slurmd
+  Workdir:  /tmp/atlantis_1559
+==============================================
+Activated venv: /home/clg_98da5933b7a1/venv_cdse/bin/python

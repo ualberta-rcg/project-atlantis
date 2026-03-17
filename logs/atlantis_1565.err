@@ -1,0 +1,12 @@
+No runner for scan type temporal_cv. Add to run_scan_type.py.
+Traceback (most recent call last):
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 351, in <module>
+    main()
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 287, in main
+    process_one_tile_v3(tile, scan_config, worker_id, workdir=args.workdir)
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 200, in process_one_tile_v3
+    rc = run([sys.executable, os.path.join(SCRIPT_DIR, "run_scan_type.py"),
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/clg_98da5933b7a1/project-atlantis/scripts/run_pipeline.py", line 40, in run
+    raise RuntimeError(f"Command failed ({r.returncode}): {' '.join(cmd)}")
+RuntimeError: Command failed (1): /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/run_scan_type.py /tmp/atlantis_1565/atlantis_slurm-1565/tile_54.6050_18.2300/stack.tif temporal_cv /tmp/atlantis_1565/atlantis_slurm-1565/tile_54.6050_18.2300/temporal_cv tile_54.6050_18.2300

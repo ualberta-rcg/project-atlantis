@@ -1,0 +1,19 @@
+==============================================
+Atlantis pipeline — Tue Mar 17 01:01:56 UTC 2026
+  Tile:     tile_54.6050_18.2300
+  Job ID:   1561
+  Node:     eureka2
+  Project:  /home/clg_98da5933b7a1/project-atlantis
+  Workdir:  /tmp/atlantis_1561
+==============================================
+Activated venv: /home/clg_98da5933b7a1/venv_cdse/bin/python
+Already up to date.
+
+============================================================
+[tile] tile_54.6050_18.2300  bbox=[54.605, 18.23, 54.66, 18.28]  500x500px
+[tile] Working in: /tmp/atlantis_1561/atlantis_slurm-1561/tile_54.6050_18.2300
+============================================================
+
+[run] /home/clg_98da5933b7a1/venv_cdse/bin/python /home/clg_98da5933b7a1/project-atlantis/scripts/fetch_s1_tile.py tile_54.6050_18.2300 --bbox 54.605 18.23 54.66 18.28 --data-dir /tmp/atlantis_1561/atlantis_slurm-1561 --size 500
+Fetching 12 images for tile_54.6050_18.2300 at 500x500 px
+Bbox: [54.605, 18.23, 54.66, 18.28]
