@@ -97,7 +97,8 @@ def pick_work_v3(target_tiles, processed_records, claimed_records, batch_size, t
     active_claims = set()
     for r in claimed_records:
         try:
-            claimed_at = datetime.fromisoformat(r["claimed_at"].replace("Z", "+00:00"))
+            raw = r["claimed_at"].replace("Z", "").replace("+00:00", "")
+            claimed_at = datetime.fromisoformat(raw)
         except Exception:
             continue
         ttl = r.get("ttl_minutes", ttl_minutes)
